@@ -1,0 +1,20 @@
+.guest-footer{
+  font-family: "Lato", sans-serif;
+  background-color: #1C155B;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  bottom: 0;
+  color: white;
+  border-top: 1px white solid;
+}
+
+.user-footer{
+  font-family: "Lato", sans-serif;
+  background-color: #495289;
+  padding-top: 3px;
+  padding-left: 250px;
+  padding-bottom: 3px;
+  bottom: 0;
+  color: white;
+  border-top: 1px white solid;
+}

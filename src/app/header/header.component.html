@@ -1,0 +1,54 @@
+<head>
+  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
+  <script src="https://cdn.rawgit.com/download/glyphicons/0.1.0/glyphicons.js"></script>
+</head>
+<body>
+  <!-- Landing and Login Page -->
+<div class="guest-bar-container" *ngIf="router.url === '/landing-page' || router.url === '/login-page'">
+</div>
+<!-- Header and Search Bar -->
+<div *ngIf="!(router.url === '/landing-page' || router.url === '/login-page')" class="user-bar-container">
+  <p class="notification"><span class="glyphicon">&#xe123;</span><p>
+</div>
+<!-- MENU -->
+<nav *ngIf="!(router.url === '/landing-page' || router.url === '/login-page')" class="navbar navbar-inverse sidebar" role="navigation">
+    <div class="sidebar-container">
+		    <div class="navbar-header">
+			       <a class="navbar-brand"><img class="sidebar-brand" src='./assets/logo-branco.png'></a>
+		    </div>
+  			<ul class="nav navbar-nav">
+    		    <li>
+              <a [routerLink]="['/home-page']">
+                <span class="glyphicon">&#xe021;</span>
+                Minha Biblioteca
+              </a>
+            </li>
+    				<li>
+              <a [routerLink]="['/recommended-page']">
+                <span class="glyphicon">&#xe044;</span>
+                Bibliografia Recomendada
+              </a>
+            </li>
+    				<li>
+              <a [routerLink]="['/search-page']">
+                <span class="glyphicon">&#xe043;</span>
+                Consultar Livros
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/help-page']">
+                <span class="glyphicon">&#xe085;</span>
+                Ajuda
+              </a>
+            </li>
+            <li>
+              <a [routerLink]="['/config-page']">
+                <span class="glyphicon">&#xe019;</span>
+                Configurações
+              </a>
+            </li>
+    	 	</ul>
+	  </div>
+</nav>
+</body>
+<hr/>
