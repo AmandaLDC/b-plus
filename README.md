@@ -1,6 +1,9 @@
-# b-plus
+## B-Plus
 B-Plus is a social media platform to optimize study bibliography organization, user book reviews and classifications and sharing both user-made and official client-made bibliographies.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
+
+## Getting Started
+Install Angular, Node and NPM. Run "npm install" to install node modules necessary.
 
 ## Development server
 
