@@ -1,5 +1,6 @@
 ## B-Plus
 B-Plus is a social media platform to optimize study bibliography organization, user book reviews and classifications and sharing both user-made and official client-made bibliographies.
+Made for a college project.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.2.2.
 
 ## Getting Started
@@ -28,3 +29,9 @@ Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protrac
 ## Further help
 
 To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+
+##Made By
+Amanda Lanza de Carli
+João Pedro Beck Land
+Leonardo Maestri
+Thales Joazeiro
