@@ -19,9 +19,9 @@
   }
 
   .notification{
-    top: 0;
     text-align: right;
     padding-right: 30px;
+    padding-top: 18px;
     font-size: 20px;
   }
 
