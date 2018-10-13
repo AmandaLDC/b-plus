@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { api_id_aluno } from http://dev2.unifacef.com.br:8000/api/matriculadoGrad/id_aluno;
 
 import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
@@ -43,7 +44,9 @@ import { HttpClientModule } from '@angular/common/http';
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [],
+  providers: [
+    api_id_aluno
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
