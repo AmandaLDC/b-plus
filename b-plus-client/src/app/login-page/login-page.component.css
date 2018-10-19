@@ -1,14 +1,18 @@
 .login{
-  font-family: "Lato", sans-serif;
-  background-color: #1C155B;
+  background-color: white;
   padding-top: 15px;
   height: 100%;
   min-height: 88.5vh;
 }
+.card-signin{
+  background-color: #1C155B;
+  border-style: initial;
+}
 
-.login-brand{
-  padding-top: 60px;
-  width:25%;
-  position:fixed;
-  left: 37%;
+.form-label-group{
+  padding-top: 2%;
+}
+
+.label-login{
+  color: white;
 }
