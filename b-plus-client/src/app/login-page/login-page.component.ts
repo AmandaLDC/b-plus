@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 
 export class LoginPageComponent implements OnInit {
 
-  user : any;
+  user: any = {};
   model: any = {};
 
   constructor(
@@ -18,31 +18,22 @@ export class LoginPageComponent implements OnInit {
       private router: Router) {}
 
   ngOnInit() {
-    console.log("Page opens");
   }
 
-  getPw(user){
-    var cpf = this.user.cpf;
-    var pw_aux = pw.split(".");
-    var pw = pw.append(pw_aux[0]);
-    pw = pw.append(pw_aux[1]);
-    pw = pw.join();
-    console.log(pw);
-  }
 
   onSubmit() {
-      var m = JSON.stringify(this.model);
-      console.log(this.model);
-      var id = JSON.stringify(this.model.id);
-      console.log(id);
-      this.http.get('http://dev2.unifacef.com.br:8000/api/matriculadoGrad/'+id).subscribe(dados => {
-        this.user = dados;
-      })
-      console.log(this.user);
-      var pw = this.getPw(this.user);
-      if(pw==this.model.password){
-        this.router.navigate(['/home-page']);
-      }
+      const id = this.model.id;
+      const endpoint = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + id;
+      this.http.get(endpoint).subscribe(dados => {
+        this.user = dados[0];
+        console.log(this.user.cpf);
+        const  pw = this.user.cpf.split('.');
+        let senha = [];
+        senha = pw[0] + pw[1];
+        if (senha === this.model.password) {
+          this.router.navigate(['/home-page']);
+        }
+      });
   }
 
 }

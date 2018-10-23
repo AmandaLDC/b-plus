@@ -6,8 +6,8 @@
           <div class="card card-signin my-5">
             <div class="card-body">
               <h5 class="card-title text-center">Sign In</h5>
-              <img class="login-brand" src='./assets/logo-branco.png'>
-              <form class="form-signin" (ngSubmit)="onSubmit()" #f="ngForm">
+              <img class="login-brand" src='../../assets/logo-branco.png'>
+              <form class="form-signin" (ngSubmit)="onSubmit()">
                 <div class="form-label-group">
                   <label class="label-login" for="id">Codigo</label>
                   <input type="text" class="form-control" name="id" [(ngModel)]="model.id" #id="ngModel" placeholder="Código" required autofocus>
