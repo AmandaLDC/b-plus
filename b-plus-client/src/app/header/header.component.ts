@@ -19,10 +19,9 @@ export class HeaderComponent implements OnInit {
 
   ngOnInit() {
     this.queryField.valueChanges
-    .debounceTime(100)
     .distinctUntilChanged()
     .subscribe(queryField => this._searchService.search(queryField)
-    .subscribe(response => this.results[0] = this.response.json().titulo_material));
+    .subscribe(response => this.results = response.json().titulo_material));
   }
 
 }
