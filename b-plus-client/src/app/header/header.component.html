@@ -8,6 +8,15 @@
   </div>
   <!-- Header and Search Bar -->
   <div *ngIf="!(router.url === '/landing-page' || router.url === '/login-page')" class="user-bar-container">
+    <section class="filter-wrapper">
+     <div class="keyword-wrapper">
+    <input [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
+      </div>
+    <ul class="filter-select">
+      <li *ngFor="let result of results" class="filter-select-list"><p class="artist-name"></p>
+    <span class="tags"></span>
+    </ul>
+    </section>
     <p class="notification"><span class="glyphicon">&#xe123;</span><p>
   </div>
   <!-- MENU -->

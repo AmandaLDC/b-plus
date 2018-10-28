@@ -20,7 +20,6 @@ export class LoginPageComponent implements OnInit {
   ngOnInit() {
   }
 
-
   onSubmit() {
       const id = this.model.id;
       const endpoint = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + id;

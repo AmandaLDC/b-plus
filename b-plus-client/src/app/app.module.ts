@@ -14,9 +14,11 @@ import { HelpPageComponent } from './help-page/help-page.component';
 import { ConfigPageComponent } from './config-page/config-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { SearchService } from './search/search.service';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
+import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -39,9 +41,11 @@ import { HttpClientModule } from '@angular/common/http';
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     RouterModule.forRoot(ROUTES)
   ],
+  providers: [SearchService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
