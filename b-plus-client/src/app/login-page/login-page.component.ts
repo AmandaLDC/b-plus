@@ -25,7 +25,6 @@ export class LoginPageComponent implements OnInit {
       const endpoint = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + id;
       this.http.get(endpoint).subscribe(dados => {
         this.user = dados[0];
-        console.log(this.user.cpf);
         const  pw = this.user.cpf.split('.');
         let senha = [];
         senha = pw[0] + pw[1];

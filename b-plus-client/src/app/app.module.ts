@@ -19,6 +19,7 @@ import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
@@ -43,6 +44,7 @@ import { HttpClientModule } from '@angular/common/http';
     FormsModule,
     ReactiveFormsModule,
     HttpClientModule,
+    HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
   providers: [SearchService],
