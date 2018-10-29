@@ -19,6 +19,26 @@
     top: 0;
   }
 
+  .search-bar-container{
+    background-color: white;
+    color: grey;
+    border-bottom: 1px grey solid;
+    box-shadow: 2px;
+    width: 60%;
+    height: 60px;
+    top: 0;
+  }
+
+  .search-button{
+    color: white;
+    background-color: blue;
+    padding-left: 15px;
+    padding-right: 15px;
+    width: 20%;
+    height: 100%;
+    top: 0;
+  }
+
   .notification{
     text-align: right;
     padding-right: 30px;

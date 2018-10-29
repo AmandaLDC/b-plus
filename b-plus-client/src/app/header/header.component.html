@@ -8,12 +8,18 @@
   </div>
   <!-- Header and Search Bar -->
   <div *ngIf="!(router.url === '/landing-page' || router.url === '/login-page')" class="user-bar-container">
-    <input [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
+    <input  class="search-bar-container" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
+    <a class="search-button" [routerLink]="['/search-page']">
+      Procurar
+    </a>
+    <a [routerLink]="['/config-page']">
+      Usuário
+    </a>
+    <p class="notification"><span class="glyphicon">&#xe123;</span><p>
     <ul>
       <li *ngFor="let result of results"><p></p>
     <span class="tags"></span>
     </ul>
-    <p class="notification"><span class="glyphicon">&#xe123;</span><p>
   </div>
   <!-- MENU -->
   <nav *ngIf="!(router.url === '/landing-page' || router.url === '/login-page')" class="navbar navbar-inverse sidebar" role="navigation">
