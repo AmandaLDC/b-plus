@@ -1,5 +1,4 @@
 import {Routes} from '@angular/router';
-import { AppComponent } from './app.component';
 import { LandingPageComponent } from './landing-page/landing-page.component';
 import { LoginPageComponent } from './login-page/login-page.component';
 import { HomePageComponent } from './home-page/home-page.component';
@@ -28,4 +27,4 @@ export const ROUTES: Routes = [
     {path: 'config-page', component: ConfigPageComponent},
     {path: 'header', component: HeaderComponent},
     {path: 'footer', component: FooterComponent},
-]
+];

@@ -1,5 +1,5 @@
 // Carrega o modulo HTTP do Node
-var http = require("http");
+let http = require("http");
 
 // Cria um servidor HTTP e uma escuta de requisições para a porta 3000
 http.createServer(function(request, response) {
