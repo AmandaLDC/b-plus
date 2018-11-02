@@ -14,6 +14,7 @@ import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 
 export const ROUTES: Routes = [
+    {path: '', redirectTo: 'login-page', pathMatch: 'full'},
     {path: 'landing-page', component: LandingPageComponent},
     {path: 'login-page', component: LoginPageComponent},
     {path: 'home-page', component: HomePageComponent},
