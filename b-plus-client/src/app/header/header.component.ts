@@ -21,7 +21,7 @@ export class HeaderComponent implements OnInit {
     this.queryField.valueChanges
     .distinctUntilChanged()
     .subscribe(queryField => this._searchService.search(queryField)
-    .subscribe(response => this.results = response.json().titulo_material));
+    .subscribe(response => this.results[0] = response));
   }
 
 }

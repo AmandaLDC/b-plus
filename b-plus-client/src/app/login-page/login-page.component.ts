@@ -23,6 +23,7 @@ export class LoginPageComponent implements OnInit {
   onSubmit() {
       const id = this.model.id;
       const endpoint = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + id;
+
       this.http.get(endpoint).subscribe(dados => {
         this.user = dados[0];
         const  pw = this.user.cpf.split('.');
