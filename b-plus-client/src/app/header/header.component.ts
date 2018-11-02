@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { SearchService } from '../search/search.service';
-import 'rxjs/add/operator/debounceTime';
 import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
@@ -12,7 +11,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 })
 export class HeaderComponent implements OnInit {
 
-  results: any[] = [];
+  results: any = [];
   queryField: FormControl = new FormControl();
 
   constructor(public router: Router, private _searchService: SearchService) { }
@@ -21,7 +20,7 @@ export class HeaderComponent implements OnInit {
     this.queryField.valueChanges
     .distinctUntilChanged()
     .subscribe(queryField => this._searchService.search(queryField)
-    .subscribe(response => this.results[0] = response));
+    .subscribe(response => this.results = response));
   }
 
 }
