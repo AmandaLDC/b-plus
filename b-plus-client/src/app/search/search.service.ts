@@ -35,4 +35,8 @@ search(queryString: string) {
     this.data = str;
     console.log(str);
   }
+
+  getdataforid_material(){
+    return this.data;
+  }
 }

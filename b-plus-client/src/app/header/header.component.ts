@@ -23,19 +23,13 @@ export class HeaderComponent implements OnInit {
     .distinctUntilChanged()
     .subscribe(queryField => this._searchService.search(queryField)
     .subscribe(response => this.results = response))
-    //for(let x=1;x>10;x++){
-    //  if(this.results[x].id_material != this.results[x-1].id_material){
-    //    this.suggestions[x-1] = this.results[x].titulo_material;
-    //  }
-    //}
-    //console.log(this.suggestions
   }
 
   onClick(str : string){
     this._searchService.save(str);
     this.results = [];
     this.queryField = new FormControl();
-    this.router.navigate(['/expand-list']);
+    this.router.navigate(['/book-info']);
   }
 
 }
