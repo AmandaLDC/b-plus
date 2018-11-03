@@ -16,6 +16,12 @@
       Usuário
     </a>
     <p class="notification"><span class="glyphicon">&#xe123;</span><p>
+
+
+      <!-- AS SUGESTÕES NÃO DESAPARECEM SE VC APAGA -->
+      <!-- OS TITULOS SE REPETEM (O ID_MATERIAL NÃO PODE SER IGUAL) -->
+      <!-- ARRUMAR O CSS DAS SUGESTÕES -->
+
     <ul>
       <div *ngIf="queryField != null">
         <li *ngFor="let results of results ? results.slice(0,6): []" class="search-bar-suggestion-containr">
