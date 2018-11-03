@@ -23,11 +23,6 @@ export class HeaderComponent implements OnInit {
     .distinctUntilChanged()
     .subscribe(queryField => this._searchService.search(queryField)
     .subscribe(response => this.results = response))
-    if(this.queryField.value == null){
-      console.log("yes")
-      this.results = [];
-      this.queryField = new FormControl();
-    };
     //for(let x=1;x>10;x++){
     //  if(this.results[x].id_material != this.results[x-1].id_material){
     //    this.suggestions[x-1] = this.results[x].titulo_material;
