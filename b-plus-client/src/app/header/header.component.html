@@ -17,8 +17,11 @@
     </a>
     <p class="notification"><span class="glyphicon">&#xe123;</span><p>
     <ul>
-      <li *ngFor="let titulo_material of results" class="user-bar-suggestions"><p></p>
-    <span class="tags"></span>
+      <div *ngIf="queryField != null">
+        <li *ngFor="let results of results ? results.slice(0,6): []" class="search-bar-suggestion-containr">
+        <button (click)="onClick(results.id_material)" class="search-bar-suggestions">{{results.titulo_material}}</button>
+        <span class="tags"></span>
+      </div>
     </ul>
   </div>
   <!-- MENU -->

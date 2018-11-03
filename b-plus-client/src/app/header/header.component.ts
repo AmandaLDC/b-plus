@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
+import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 import { SearchService } from '../search/search.service';
 import 'rxjs/add/operator/distinctUntilChanged';
 
@@ -12,6 +13,7 @@ import 'rxjs/add/operator/distinctUntilChanged';
 export class HeaderComponent implements OnInit {
 
   results: any = [];
+  suggestions: any = [];
   queryField: FormControl = new FormControl();
 
   constructor(public router: Router, private _searchService: SearchService) { }
@@ -20,7 +22,25 @@ export class HeaderComponent implements OnInit {
     this.queryField.valueChanges
     .distinctUntilChanged()
     .subscribe(queryField => this._searchService.search(queryField)
-    .subscribe(response => this.results = response));
+    .subscribe(response => this.results = response))
+    if(this.queryField.value == null){
+      console.log("yes")
+      this.results = [];
+      this.queryField = new FormControl();
+    };
+    //for(let x=1;x>10;x++){
+    //  if(this.results[x].id_material != this.results[x-1].id_material){
+    //    this.suggestions[x-1] = this.results[x].titulo_material;
+    //  }
+    //}
+    //console.log(this.suggestions
+  }
+
+  onClick(str : string){
+    this._searchService.save(str);
+    this.results = [];
+    this.queryField = new FormControl();
+    this.router.navigate(['/expand-list']);
   }
 
 }
