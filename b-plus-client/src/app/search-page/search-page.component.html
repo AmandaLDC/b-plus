@@ -5,7 +5,12 @@
   <div class="container global-div">
     <div class="row">
       <div class="col-md-12">
-        
+        <ul>
+        <li *ngFor="let results of results | paginate: {  itemsPerPage: 50,
+                                                          currentPage: p}">
+          <p *ngIf="results.numero_exemplar == 1">{{results.titulo_material}}</p>
+        </li>
+        </ul>
       </div>
     </div>
   </div>

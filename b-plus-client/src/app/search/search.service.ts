@@ -37,6 +37,7 @@ search(queryString: string) {
   }
 
   getdataforid_material(){
-    return this.data;
+    let _URL = this.baseUrl + this.data;
+    return _URL
   }
 }
