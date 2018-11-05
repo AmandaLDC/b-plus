@@ -15,13 +15,15 @@ import { ConfigPageComponent } from './config-page/config-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchService } from './search/search.service';
-import {NgxPaginationModule} from 'ngx-pagination';
+import { UserService } from './user/user.service';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { ROUTES } from './app.routes';
 import { RouterModule } from '@angular/router';
 import { FormsModule } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 @NgModule({
   declarations: [
@@ -39,6 +41,7 @@ import { HttpClientModule } from '@angular/common/http';
     ConfigPageComponent,
     HeaderComponent,
     FooterComponent,
+    UserInfoComponent,
   ],
   imports: [
     BrowserModule,
@@ -49,7 +52,7 @@ import { HttpClientModule } from '@angular/common/http';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [SearchService],
+  providers: [SearchService, UserService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

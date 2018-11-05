@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { UserService } from '../user/user.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -15,16 +16,28 @@ export class LoginPageComponent implements OnInit {
 
   constructor(
       private http: HttpClient,
-      private router: Router) {}
+      private router: Router,
+      private _userService: UserService) {}
 
   ngOnInit() {
   }
 
   onSubmit() {
       const id = this.model.id;
-      const endpoint = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + id;
+      this._userService.save(id);
+      const endpoint = this._userService.getdataforid_aluno();
+      console.log(endpoint);
 
-      this.http.get(endpoint).subscribe(dados => {
+      const options = {
+        Headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin" : '*',
+          "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+          "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+        }),
+        withCredentials: false
+      }
+      this.http.get(endpoint, options).subscribe(dados => {
         this.user = dados[0];
         const  pw = this.user.cpf.split('.');
         let senha = [];

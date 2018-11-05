@@ -12,6 +12,7 @@ import { HelpPageComponent } from './help-page/help-page.component';
 import { ConfigPageComponent } from './config-page/config-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
+import { UserInfoComponent } from './user-info/user-info.component';
 
 export const ROUTES: Routes = [
     {path: '', redirectTo: 'login-page', pathMatch: 'full'},
@@ -22,6 +23,7 @@ export const ROUTES: Routes = [
     {path: 'create-list', component: CreateListComponent},
     {path: 'update-list', component: UpdateListComponent},
     {path: 'book-info', component: BookInfoComponent},
+    {path: 'user-info', component: UserInfoComponent},
     {path: 'recommended-page', component: RecommendedPageComponent},
     {path: 'search-page', component: SearchPageComponent},
     {path: 'help-page', component: HelpPageComponent},
