@@ -24,7 +24,12 @@ search(queryString: string) {
       }
       let _URL = this.baseUrl + queryString;
       const options = {
-        Headers: new HttpHeaders().append('content-type', 'application/json').append("Access-Control-Allow-Methods", "GET"),
+        Headers: new HttpHeaders({
+          'Content-Type': 'application/json',
+          "Access-Control-Allow-Origin" : '*',
+          "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+          "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+        }),
         withCredentials: false
       }
       console.log(_URL)
@@ -37,7 +42,8 @@ search(queryString: string) {
   }
 
   getdataforid_material(){
-    let _URL = this.baseUrl + this.data;
+    let baseUrlId = 'http://dev2.unifacef.com.br:8000/api/exemplarMaterial/';
+    let _URL = baseUrlId + this.data;
     return _URL
   }
 }

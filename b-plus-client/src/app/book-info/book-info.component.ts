@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 import { SearchService } from '../search/search.service';
 
 @Component({
@@ -10,19 +9,28 @@ import { SearchService } from '../search/search.service';
 })
 export class BookInfoComponent implements OnInit {
 
-  id : any;
   results : any;
 
-  constructor(private _searchService: SearchService, private _http: HttpClient) { }
+  constructor(
+    private _searchService: SearchService,
+    private http: HttpClient) { }
 
   ngOnInit() {
+    const endpoint = this._searchService.getdataforid_material();
+    console.log(endpoint);
     const options = {
-      Headers: new HttpHeaders().append('content-type', 'application/json').append("Access-Control-Allow-Methods", "GET"),
+      Headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        "Access-Control-Allow-Origin" : '*',
+        "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+        "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+      }),
       withCredentials: false
     }
-    this.id = this._searchService.getdataforid_material();
-    console.log(this.id);
-    this._http.get(this.id, options).subscribe(response => console.log(response));
+    this.http.get(endpoint, options).subscribe(data => {
+      this.results = data[0];
+    });
   }
+
 
 }
