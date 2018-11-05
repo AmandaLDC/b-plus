@@ -23,11 +23,11 @@
       <!-- ARRUMAR O CSS DAS SUGESTÕES -->
 
     <ul>
-      <div *ngIf="queryField != null">
         <li *ngFor="let results of results ? results.slice(0,6): []" class="search-bar-suggestion-containr">
-        <button (click)="onClick(results.id_material)" class="search-bar-suggestions">{{results.titulo_material}}</button>
-        <span class="tags"></span>
-      </div>
+          <div *ngIf="results.numero_exemplar == 1">
+            <button (click)="onClick(results.id_material)" class="search-bar-suggestions">{{results.titulo_material}} <p *ngIf="results.volume_exemplar != 0" style="display:inline"> {{results.volume_exemplar}} </p> {{results.edicao_ano}}</button>
+          </div>
+        </li>
     </ul>
   </div>
   <!-- MENU -->

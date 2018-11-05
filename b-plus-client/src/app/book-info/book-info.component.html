@@ -2,15 +2,15 @@
   <div class="container global-div">
     <div class="row">
       <div class="col-md-12">
-        <h2> METODOLOGIA DO TRABALHO CIENTIFICO: DIRETRIZES PARA O TRABALHO DIDATICO - CIENTIFICO NA UNIVERSIDADE</h2>
+        <h2> {{results?.titulo_material}}</h2>
 
         <div class="info">
-          <p>Tipo: Livro</p>
+          <p>Tipo: {{results?.nome_tipo}}</p>
           <p>Autor: SEVERINO, ANTONIO JOAQUIM</p>
           <p>Volume: Único</p>
           <p>Número da Edição: 5</p>
-          <p>Ano da Edição: 1980</p>
-          <p>Editora: SAO PAULO: MORAES</p>
+          <p>Ano da Edição: {{results?.edicao_ano}}</p>
+          <p>Editora: {{results?.nome_editora}}</p>
           <p>Assuntos Relacionados:</p>
 
           <ul>
@@ -37,9 +37,16 @@
           <p>Número de Exemplares na Bibioteca: 1 unidade.</p>
           <p>Disponibilidade Atual: 1 exemplar disponível.</p>
 
+          Avise-me quando estiver disponível:
+          <!-- Inserir botão aqui -->
+
           <div class="related">
           <p>Outros Livros Desse Autor:</p>
           </div>
+
+          <button>
+            Avaliar/Comentar
+          </button>
 
         </div>
 
