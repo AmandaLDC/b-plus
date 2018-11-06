@@ -12,7 +12,7 @@ export class BookInfoComponent implements OnInit {
   results: any = {
                   titulo : "",
                   tipo : "",
-                  autor : "",
+                  autor : [],
                   volume : 0,
                   edicao : 0,
                   ano : "",
@@ -26,10 +26,8 @@ export class BookInfoComponent implements OnInit {
 
   ngOnInit() {
     const endpoint = this._searchService.getdataforid_material();
-    const auendpoint = this._searchService.getdataforautor();
-    const asendpoint = this._searchService.getdataforassunto();
-    console.log(auendpoint);
-    console.log(asendpoint);
+    let auendpoint = this._searchService.getdataforautor();
+    let asendpoint = this._searchService.getdataforassunto();
 
     if(endpoint != "0"){
       const options = {
@@ -43,11 +41,16 @@ export class BookInfoComponent implements OnInit {
       }
       this.http.get(endpoint, options).subscribe(data => {
         this.pageInit(data);
-        //let ex = data[0].tombo_exemplar;
-        localStorage.setItem("livro", this.results);
+        let ex = data[0].id_exemplar;
+        auendpoint = auendpoint + ex;
+        asendpoint = asendpoint + ex;
+        console.log(auendpoint);
         this.http.get(auendpoint, options).subscribe(response => {
           this.getAutor(response);
-          this.http.get(asendpoint, options).subscribe(results => {this.getAssunto(results)})
+          this.http.get(asendpoint, options).subscribe(e => {
+            this.getAssunto(e);
+            localStorage.setItem("livro", this.results);
+          })
       })
       })
     } else {
@@ -84,14 +87,13 @@ export class BookInfoComponent implements OnInit {
   }
 
   getAutor(data){
-    this.results.autor = data.nome_autor;
+    this.results.autor = data;
     console.log(this.results.autor);
   }
 
   getAssunto(data){
-    for (let x in this.results){
-      this.results.assuntos.append(data[x].nome_assunto);
-    }
+    console.log(data)
+    this.results.assuntos = data;
   }
 
   trataTitulo(str){

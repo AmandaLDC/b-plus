@@ -55,7 +55,7 @@ search(queryString: string) {
       return "0";
     }
     let baseUrlId = 'http://dev2.unifacef.com.br:8000/api/exemplarAutor/';
-    let _URL = baseUrlId + this.data;
+    let _URL = baseUrlId;
     return _URL
   }
 
@@ -64,7 +64,7 @@ search(queryString: string) {
       return "0";
     }
     let baseUrlId = 'http://dev2.unifacef.com.br:8000/api/exemplarAssunto/';
-    let _URL = baseUrlId + this.data;
+    let _URL = baseUrlId;
     return _URL
   }
 }

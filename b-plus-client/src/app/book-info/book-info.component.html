@@ -6,7 +6,8 @@
 
         <div class="info">
           <p>Tipo: {{results.tipo}}</p>
-          <p>Autor: {{results.autor}}</p>
+          <p>Autores:</p>
+          <p *ngFor="let results of results.autor">{{results.nome_autor}}</p>
           <p>Volume: {{results.volume}}</p>
           <p>Número da Edição: {{results.edicao}}</p>
           <p>Ano da Edição: {{results.ano}}</p>
@@ -14,23 +15,8 @@
           <p>Assuntos Relacionados:</p>
 
           <ul>
-            <li>
-                ADMINISTRAÇAO DE EMPRESAS - TEORIA
-            </li>
-            <li>
-                CAOS DETERMINISTICOS
-            </li>
-            <li>
-                MUDANÇA ORGANIZACIONAL
-            </li>
-            <li>
-      	       COMPLEXIDADE
-            </li>
-            <li>
-      	       ORGANIZAÇOES - TEORIA
-            </li>
-            <li>
-                I.T
+            <li *ngFor="let results of results.assuntos">
+                {{results.nome_assunto}}
             </li>
           </ul>
 
