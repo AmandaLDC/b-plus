@@ -2,40 +2,26 @@
   <div class="container global-div">
     <div class="row">
       <div class="col-md-12">
-        <h2> {{results?.titulo_material}}</h2>
+        <h2> {{results.titulo}} </h2>
 
         <div class="info">
-          <p>Tipo: {{results?.nome_tipo}}</p>
-          <p>Autor: SEVERINO, ANTONIO JOAQUIM</p>
-          <p>Volume: Único</p>
-          <p>Número da Edição: 5</p>
-          <p>Ano da Edição: {{results?.edicao_ano}}</p>
-          <p>Editora: {{results?.nome_editora}}</p>
+          <p>Tipo: {{results.tipo}}</p>
+          <p>Autores:</p>
+          <p *ngFor="let results of results.autor">{{results.nome_autor}}</p>
+          <p>Volume: {{results.volume}}</p>
+          <p>Número da Edição: {{results.edicao}}</p>
+          <p>Ano da Edição: {{results.ano}}</p>
+          <p>Editora: {{results.editora}}</p>
           <p>Assuntos Relacionados:</p>
 
           <ul>
-            <li>
-                ADMINISTRAÇAO DE EMPRESAS - TEORIA
-            </li>
-            <li>
-                CAOS DETERMINISTICOS
-            </li>
-            <li>
-                MUDANÇA ORGANIZACIONAL
-            </li>
-            <li>
-      	       COMPLEXIDADE
-            </li>
-            <li>
-      	       ORGANIZAÇOES - TEORIA
-            </li>
-            <li>
-                I.T
+            <li *ngFor="let results of results.assuntos">
+                {{results.nome_assunto}}
             </li>
           </ul>
 
-          <p>Número de Exemplares na Bibioteca: 1 unidade.</p>
-          <p>Disponibilidade Atual: 1 exemplar disponível.</p>
+          <p>Número de Exemplares na Bibioteca: {{results.n_total}} unidades.</p>
+          <p>Disponibilidade Atual: {{results.n_disponivel}} exemplar disponível.</p>
 
           Avise-me quando estiver disponível:
           <!-- Inserir botão aqui -->

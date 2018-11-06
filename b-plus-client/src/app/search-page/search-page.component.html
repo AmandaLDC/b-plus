@@ -8,7 +8,11 @@
         <ul>
         <li *ngFor="let results of results | paginate: {  itemsPerPage: 50,
                                                           currentPage: p}">
-          <p *ngIf="results.numero_exemplar == 1">{{results?.titulo_material}}</p>
+          <button (click)="onClick(results.id_material)" *ngIf="results.numero_exemplar == 1">
+            {{results?.titulo_material}}
+            <p *ngIf="results.volume_exemplar != 0" style="display:inline"> {{results.volume_exemplar}}</p>
+            {{results.edicao_ano}}
+          </button>
         </li>
         </ul>
       </div>
