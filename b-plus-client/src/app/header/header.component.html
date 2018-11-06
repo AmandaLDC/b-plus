@@ -25,7 +25,11 @@
     <ul>
         <li *ngFor="let results of results ? results.slice(0,6): []" class="search-bar-suggestion-containr">
           <div *ngIf="results.numero_exemplar == 1">
-            <button (click)="onClick(results.id_material)" class="search-bar-suggestions">{{results.titulo_material}} <p *ngIf="results.volume_exemplar != 0" style="display:inline"> {{results.volume_exemplar}} </p> {{results.edicao_ano}}</button>
+            <button (click)="onClick(results.id_material)" class="search-bar-suggestions">
+              {{results.titulo_material}}
+              <p *ngIf="results.volume_exemplar != 0" style="display:inline"> {{results.volume_exemplar}} </p>
+              {{results.edicao_ano}}
+            </button>
           </div>
         </li>
     </ul>
