@@ -1,24 +1,22 @@
+
+.accordion .card-header:after {
+  font-family: 'FontAwesome';
+  content: "\f068";
+  float: right;
+}
+.accordion .card-header.collapsed:after {
+  /* symbol for "collapsed" panels */
+  content: "\f067";
+}
+
 .card-header{
-  background-color: white;
+  font-family: 'Open Sans', SansSerif;
+  text-align: justify;
+  text-size: 1.0em;
 }
 
-.card-title{
+.card-text{
+  font-family: 'Open Sans', SansSerif;
   text-align: justify;
-  text-decoration: none;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.2em;
-  text-color: #1c155b;
-}
-.collapsed-faq{
-  text-color: #1c155b;
-}
-a:hover{
-  text-decoration: none;
-  text-color: #1c155b;
-}
-
-.card-body{
-  text-align: justify;
-  font-family: 'Open Sans', sans-serif;
-  font-size: 1.2em;
+  text-size: 1.0em;
 }
