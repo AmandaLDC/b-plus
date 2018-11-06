@@ -11,7 +11,6 @@ import { BookInfoComponent } from './book-info/book-info.component';
 import { RecommendedPageComponent } from './recommended-page/recommended-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
 import { HelpPageComponent } from './help-page/help-page.component';
-import { ConfigPageComponent } from './config-page/config-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchService } from './search/search.service';
