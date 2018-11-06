@@ -37,7 +37,6 @@ import { UserInfoComponent } from './user-info/user-info.component';
     RecommendedPageComponent,
     SearchPageComponent,
     HelpPageComponent,
-    ConfigPageComponent,
     HeaderComponent,
     FooterComponent,
     UserInfoComponent,
