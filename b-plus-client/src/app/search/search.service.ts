@@ -32,13 +32,11 @@ search(queryString: string) {
         }),
         withCredentials: false
       }
-      console.log(_URL)
       return this._http.get(_URL, options);
   }
 
   save(str : string){
     this.data = str;
-    console.log(str);
   }
 
   getdataforid_material(){

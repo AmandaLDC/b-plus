@@ -17,7 +17,9 @@ export class BookInfoComponent implements OnInit {
                   edicao : 0,
                   ano : "",
                   editora : "",
-                  assuntos : []
+                  assuntos : [],
+                  n_disponivel : 0,
+                  n_total : 0
                 };
 
   constructor(
@@ -44,7 +46,6 @@ export class BookInfoComponent implements OnInit {
         let ex = data[0].id_exemplar;
         auendpoint = auendpoint + ex;
         asendpoint = asendpoint + ex;
-        console.log(auendpoint);
         this.http.get(auendpoint, options).subscribe(response => {
           this.getAutor(response);
           this.http.get(asendpoint, options).subscribe(e => {
@@ -73,6 +74,8 @@ export class BookInfoComponent implements OnInit {
     let ed = data[0].nome_editora;
     let status;
     let assuntos = [];
+    let nd = this.getnd(data);
+    let nt = this.getnt(data);
 
     this.results = {
       titulo : t,
@@ -82,18 +85,37 @@ export class BookInfoComponent implements OnInit {
       edicao : ne,
       ano : ano,
       editora : ed,
-      assuntos : assuntos
+      assuntos : assuntos,
+      n_disponivel : nd,
+      n_total : nt
     }
   }
 
   getAutor(data){
     this.results.autor = data;
-    console.log(this.results.autor);
   }
 
   getAssunto(data){
-    console.log(data)
     this.results.assuntos = data;
+  }
+
+
+  getnt(data){
+    let r = 0;
+    for(let x in data){
+      r++;
+    }
+    return r;
+  }
+
+  getnd(data){
+    let r = 0;
+    for(let x in data){
+      if(data[x].situacao_exemplar == "D"){
+        r++;
+      }
+    }
+    return r;
   }
 
   trataTitulo(str){
