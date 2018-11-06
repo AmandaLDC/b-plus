@@ -27,11 +27,11 @@ export class BookInfoComponent implements OnInit {
     private http: HttpClient) { }
 
   ngOnInit() {
-    const endpoint = this._searchService.getdataforid_material();
-    let auendpoint = this._searchService.getdataforautor();
-    let asendpoint = this._searchService.getdataforassunto();
+    const livro_endpoint = this._searchService.getdataforid_material();
+    let autor_endpoint = this._searchService.getdataforautor();
+    let assunto_endpoint = this._searchService.getdataforassunto();
 
-    if(endpoint != "0"){
+    if(livro_endpoint != "0"){
       const options = {
         Headers: new HttpHeaders({
           'Content-Type': 'application/json',
@@ -41,14 +41,14 @@ export class BookInfoComponent implements OnInit {
         }),
         withCredentials: false
       }
-      this.http.get(endpoint, options).subscribe(data => {
+      this.http.get(livro_endpoint, options).subscribe(data => {
         this.pageInit(data);
         let ex = data[0].id_exemplar;
-        auendpoint = auendpoint + ex;
-        asendpoint = asendpoint + ex;
-        this.http.get(auendpoint, options).subscribe(response => {
+        autor_endpoint = autor_endpoint + ex;
+        assunto_endpoint = assunto_endpoint + ex;
+        this.http.get(autor_endpoint, options).subscribe(response => {
           this.getAutor(response);
-          this.http.get(asendpoint, options).subscribe(e => {
+          this.http.get(assunto_endpoint, options).subscribe(e => {
             this.getAssunto(e);
             localStorage.setItem("livro", this.results);
           })

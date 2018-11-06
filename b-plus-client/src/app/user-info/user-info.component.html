@@ -7,11 +7,12 @@
       <div class="col-md-12">
         Foto do Usuário
 
-        Nome:
-        RA:
-        Curso:
-        Semestre:
-        E-mail:
+        Nome: {{user?.sobrenome_aluno}}
+        RA: {{user?.id_aluno}}
+        Curso: {{user?.nome_curso}}
+        Semestre: {{user?.semestre}}
+        Situação: {{results?.situacao_leitor}}
+        E-mail: {{user?.email}}
 
         Lista de Notificação:
         <!-- Inserir quadro aqui-->
@@ -28,9 +29,11 @@
         <!-- Inserir quadro aqui-->
         Icone de Expandir
         <!-- Inserir botão e icone aqui-->
+        <!-- INSERIR TABELA AQUI -->
         <ul>
-            <li>
-              Livro Situação Data
+          Livro / Situação / Data De Empréstimos / Data De Devolução
+            <li *ngFor="let results of results">
+              {{results?.id_exemplar}} / {{results?.ativo}} / {{results?.dt_emprestimo}} / {{results?.dt_devolucao}}
               <!-- Inserir divisória aqui-->
             </li>
         </ul>

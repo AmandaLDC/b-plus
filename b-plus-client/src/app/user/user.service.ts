@@ -24,4 +24,10 @@ constructor(private _http: HttpClient){ }
     let _URL = this.baseUrl + this.data;
     return _URL
   }
+
+  getdataforhistorico_aluno(){
+    let eURL = 'http://dev2.unifacef.com.br:8000/api/emprestimoAluno/'
+    let _URL = eURL + this.data;
+    return _URL
+  }
 }
