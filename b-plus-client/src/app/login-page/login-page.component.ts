@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
-import { UserService } from '../user/user.service';
+import { ApiService } from '../api-endpoints/api.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,19 +13,22 @@ export class LoginPageComponent implements OnInit {
 
   user: any = {};
   model: any = {};
+  session : any = JSON.parse(localStorage.getItem("user"));
 
   constructor(
       private http: HttpClient,
       private router: Router,
-      private _userService: UserService) {}
+      private _apiService: ApiService) {}
 
   ngOnInit() {
+    if(this.session){
+      this.router.navigate(['/home-page']);
+    }
   }
 
   onSubmit() {
       const id = this.model.id;
-      this._userService.save(id);
-      const endpoint = this._userService.getdataforid_aluno();
+      const endpoint = this._apiService.getLogin(id);
       console.log(endpoint);
 
       const options = {
@@ -37,15 +40,18 @@ export class LoginPageComponent implements OnInit {
         }),
         withCredentials: false
       }
-      this.http.get(endpoint, options).subscribe(dados => {
-        this.user = dados[0];
-        const  pw = this.user.cpf.split('.');
-        let senha = [];
-        senha = pw[0] + pw[1];
-        if (senha === this.model.password) {
-          this.router.navigate(['/home-page']);
-        }
-      });
+      this.http.get(endpoint, options).subscribe(data => this.pageInit(data));
+  }
+
+  pageInit(data){
+    this.user = data[0];
+    localStorage.setItem("user", JSON.stringify(this.user));
+    const  pw = this.user.cpf.split('.');
+    let senha = [];
+    senha = pw[0] + pw[1];
+    if (senha === this.model.password) {
+      this.router.navigate(['/home-page']);
+    }
   }
 
 }
