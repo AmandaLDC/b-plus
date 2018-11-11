@@ -3,116 +3,113 @@ var router = express.Router();
 
 var pg = require('pg');
 
-// JSON de configuração de conexão com banco de dados
 var config = {
 	user: "postgres",
 	database: "tic",
-	password: "facef",
 	port: 5432,
 	max: 10,
 	idleTimeoutMills: 30000,
 }
-// cria o canal de comunicação com o banco de dados
 var canal = new pg.Pool(config);
 
+//CONSULTAR COMENTARIO
 
-// rota para consultar no MongoDB os alunos
+//Consulta Todas As Comentarios
 router.get('/', function (req, res, next) {
-// conecta no banco a partir do canal
 canal.connect(function(erro, conexao, feito){
-  if (erro){ // ocorreu um erro
+  if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'select * from student order by codigo';
+  var sql = 'select * from tb_comentario order by id_comentario';
   conexao.query(sql, function(erro, resultado){
-    feito(); // libera a conexão
+    feito();
     if (erro){
       return console.error('Erro na consulta da tabela', erro);
     }
-    res.json(resultado.rows); // retorna ao cliente as linhas do select
+    res.json(resultado.rows);
   });
 });
 })
 
+//Consulta Comentarios Por Id_comentario
 router.get('/:id', function (req, res, next) {
-// conecta no banco a partir do canal
 canal.connect(function(erro, conexao, feito){
-  if (erro){ // ocorreu um erro
+  if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'select * from student where codigo = ' + req.params.id;
+  var sql = 'select * from comentario where id_comentario = ' + req.params.id;
   console.log(sql);
   conexao.query(sql, function(erro, resultado){
-    feito(); // libera a conexão
+    feito();
     if (erro){
       return console.error('Erro na consulta da tabela', erro);
     }
-    res.json(resultado.rows[0]); // retorna ao cliente as linhas do select
+    res.json(resultado.rows[0]);
   });
 });
 })
 
-// rota para inserir no MongoDB um aluno 
+//INSERIR COMENTARIO
+
 router.post('/', function (req, res, next) {
-// conecta no banco a partir do canal
 canal.connect(function(erro, conexao, feito){
-  if (erro){ // ocorreu um erro
+  if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'insert into student (nome, endereco, rg) values (\'' + req.body.nome + 
-        '\', \''+ req.body.endereco + '\',\'' + req.body.rg + '\')';
+  var sql =
+	'insert into tb_comentario (avaliacao_comentario, id_usuario, conteudo_comentario, data_criacao, id_usuario, id_livro, id_lista)
+		values
+		(\''+ req.body.avaliacao + '\',\'' + req.body.usuario + '\',\'' + req.body.conteudo + '\',\'' + res.body.data'\')';
   console.log(sql);
 
   conexao.query(sql, function(erro, resultado){
-    feito(); // libera a conexão
+    feito();
     if (erro){
       return console.error('Erro na inserção dos dados', erro);
     }
-    res.json(resultado.rows); // retorna ao cliente o resultado da inserção
+    res.json(resultado.rows);
   });
 });
 })
 
-// rota para atualizar no MongoDB um aluno
+//ATUALIZAR COMENTARIO
+
 router.put('/:id', function (req, res, next) {
-  	// conecta no banco a partir do canal
 	canal.connect(function(erro, conexao, feito){
-		if (erro){ // ocorreu um erro
+		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-		var sql = "update student set nome = '" + req.body.nome + 
-				"', endereco = '" + req.body.endereco + "', rg = '" + req.body.rg + 
-        "' where codigo =  " + req.body.codigo;
-      
+		var sql = "update tb_comentario set conteudo_comentario = '" + req.body.conteudo +
+				"', avaliacao_comentario = '" + req.body.avaliacao +
+        "' where id_comentario =  " + req.body.codigo;
     console.log(sql);
 		conexao.query(sql, function(erro, resultado){
-			feito(); // libera a conexão
+			feito();
 			if (erro){
 				return console.error('Erro na atualização dos dados', erro);
 			}
-			res.json(resultado.rows); // retorna ao cliente o resultado da atualização
+			res.json(resultado.rows);
 		});
 	});
 })
 
-// rota para remove no MongoDB um aluno
+//REMOVER COMENTARIO
+
 router.delete('/:id', function (req, res, next) {
-  	// conecta no banco a partir do canal
 	canal.connect(function(erro, conexao, feito){
-		if (erro){ // ocorreu um erro
+		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-    var sql = 'delete from student where codigo =  ' + req.params.id;
+    var sql = 'delete from tb_comentario where id_comentario =  ' + req.params.id;
     console.log(sql);
 		conexao.query(sql, function(erro, resultado){
-			feito(); // libera a conexão
+			feito();
 			if (erro){
 				return console.error('Erro na remoção dos dados', erro);
 			}
-			res.json(resultado.rows); // retorna ao cliente o resultado da remoção
+			res.json(resultado.rows);
 		});
 	});
 })
 
-// exporta router
 module.exports = router;

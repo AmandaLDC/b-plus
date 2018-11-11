@@ -8,10 +8,12 @@ var bodyParser = require('body-parser')
 var urlPost = bodyParser.urlencoded({ extended: true })
 app.use(bodyParser.json());
 
-var student = require('./routes/exemplo');
+var lista = require('./routes/lista');
+var review = require('./routes/review');
 
 // As rotas get, post, put e delete de estudante deverão ser
 // com /student
-app.use('/student', student);
+app.use('/lista', lista);
+app.use('/review', review);
 
 app.listen(3000)
