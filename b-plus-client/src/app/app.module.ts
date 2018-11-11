@@ -14,7 +14,6 @@ import { HelpPageComponent } from './help-page/help-page.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { SearchService } from './search/search.service';
-import { UserService } from './user/user.service';
 import { ApiService } from './api-endpoints/api.service';
 import { NgxPaginationModule } from 'ngx-pagination';
 import { ROUTES } from './app.routes';
@@ -51,7 +50,7 @@ import { UserInfoComponent } from './user-info/user-info.component';
     HttpModule,
     RouterModule.forRoot(ROUTES)
   ],
-  providers: [SearchService, ApiService, UserService],
+  providers: [SearchService, ApiService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

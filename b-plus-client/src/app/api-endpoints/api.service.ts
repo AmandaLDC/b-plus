@@ -88,4 +88,21 @@ constructor(){ }
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplarAutor/' + this.book.id_exemplar;
     return url;
   }
+
+  //ENDPOINTS THAT CALL FROM THE NODE API
+
+// getListByListId(){
+//    let url = 'http://localhost:3000/lista' + this.user.id_aluno;
+//    return url;
+//  }
+
+  getListByUserId(){
+    let url = 'http://localhost:3000/lista/user/' + this.user.id_aluno;
+    return url;
+  }
+
+  postListByUserId(){
+    let url = 'http://localhost:3000/lista/'
+    return url;
+  }
 }

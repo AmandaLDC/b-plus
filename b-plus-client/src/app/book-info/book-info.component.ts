@@ -40,16 +40,7 @@ export class BookInfoComponent implements OnInit {
     const livro_endpoint = this._searchService.getdataforid_material();
 
     if(livro_endpoint != "0"){
-      const options = {
-        Headers: new HttpHeaders({
-          'Content-Type': 'application/json',
-          "Access-Control-Allow-Origin" : '*',
-          "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-          "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
-        }),
-        withCredentials: false
-      }
-      this.http.get(livro_endpoint, options).subscribe(data => {
+      this.http.get(livro_endpoint, this.options).subscribe(data => {
         this.pageInit(data);
       })
     } else {

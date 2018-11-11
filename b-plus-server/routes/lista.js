@@ -49,9 +49,26 @@ canal.connect(function(erro, conexao, feito){
 });
 })
 
+//Consulta As Listas Por id_usuario
+router.get('/user/:id', function (req, res, next) {
+canal.connect(function(erro, conexao, feito){
+  if (erro){
+    return console.error('erro ao conectar no banco', erro);
+  }
+  var sql = 'select * from lista where id_usuario = ' + req.params.id;
+  console.log(sql);
+  conexao.query(sql, function(erro, resultado){
+    feito();
+    if (erro){
+      return console.error('Erro na consulta da tabela', erro);
+    }
+    res.json(resultado.rows[0]);
+  });
+});
+})
 //INSERIR LISTA
 
-//Inseri Info da Lista
+//Inserir Info da Lista
 router.post('/', function (req, res, next) {
 canal.connect(function(erro, conexao, feito){
   if (erro){
