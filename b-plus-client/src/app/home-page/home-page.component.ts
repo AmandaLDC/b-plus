@@ -12,6 +12,7 @@ export class HomePageComponent implements OnInit {
 
   model: any = {};
   lista: any;
+  user : any = JSON.parse(localStorage.getItem("user"));
   options : any = {
                     Headers: new HttpHeaders({
                       'Content-Type': 'application/json',
@@ -39,6 +40,7 @@ export class HomePageComponent implements OnInit {
     if(!data){
       let lista_notification = {
         nome_lista: "Notificações",
+        id_usuario: this.user.id_aluno,
         categoria_lista: null,
         situacao_lista: "PES",
         tipo_lista: "NOT",
@@ -47,6 +49,7 @@ export class HomePageComponent implements OnInit {
 
       let lista_favorite = {
         nome_lista: "Favoritos",
+        id_usuario: this.user.id_aluno,
         categoria_lista: null,
         situacao_lista: "PES",
         tipo_lista: "FAV",
