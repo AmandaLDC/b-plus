@@ -39,6 +39,7 @@ export class HomePageComponent implements OnInit {
     let endpoint = this._apiService.postList();
     if(!data){
       let dn = Date.now();
+      console.log(dn)
       let lista_notification = {
         nome_lista: "Notificações",
         id_usuario: this.user.id_aluno,
@@ -48,7 +49,7 @@ export class HomePageComponent implements OnInit {
         data_criacao: dn
       }
 
-      let lista_favorite = {
+      let lista_favorita = {
         nome_lista: "Favoritos",
         id_usuario: this.user.id_aluno,
         categoria_lista: null,
@@ -56,19 +57,14 @@ export class HomePageComponent implements OnInit {
         tipo_lista: "FAV",
         data_criacao: dn
       }
-      this.http.post(endpoint, lista_notification, this.options)
+      
+      this.http.post(endpoint, [lista_notification, lista_favorita], this.options)
       .subscribe(resposta => {
           console.log("Inserido com sucesso");
       }, (erro) => {
         console.log(erro);
       });
 
-      this.http.post(endpoint,  lista_favorite, this.options)
-      .subscribe(resposta => {
-          console.log("Inserido com sucesso");
-      }, (erro) => {
-        console.log(erro);
-      });
 
       this.http.get(endpoint, this.options).subscribe(data => {
         this.lista = data;
