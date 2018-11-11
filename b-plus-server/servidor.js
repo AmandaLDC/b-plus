@@ -5,7 +5,11 @@ let http = require("http");
 http.createServer(function(request, response) {
 
   // Configura o cabeçalho da resposta com um status HTTP e um Tipo de Conteúdo
-   response.writeHead(200, {'Content-Type': 'text/plain'});
+  response.writeHead(200, {
+      'Content-Type': 'text/plain',
+      'Access-Control-Allow-Origin' : '*',
+      'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+  });
 
    // Manda o corpo da resposta "Olá Mundo"
    response.end('Server Running');

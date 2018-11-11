@@ -36,15 +36,16 @@ export class HomePageComponent implements OnInit {
   }
 
   pageInit(data){
-    let endpoint = this._apiService.getListByUserId();
+    let endpoint = this._apiService.postList();
     if(!data){
+      let dn = Date.now();
       let lista_notification = {
         nome_lista: "Notificações",
         id_usuario: this.user.id_aluno,
         categoria_lista: null,
         situacao_lista: "PES",
         tipo_lista: "NOT",
-        data_criacao: Date.now()
+        data_criacao: dn
       }
 
       let lista_favorite = {
@@ -53,7 +54,7 @@ export class HomePageComponent implements OnInit {
         categoria_lista: null,
         situacao_lista: "PES",
         tipo_lista: "FAV",
-        data_criacao: Date.now()
+        data_criacao: dn
       }
       this.http.post(endpoint, lista_notification, this.options)
       .subscribe(resposta => {

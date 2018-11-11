@@ -6,16 +6,12 @@ var pg = require('pg');
 var config = {
 	user: "postgres",
 	database: "tic",
+	password:"Khaleesi2603",
 	port: 5432,
 	max: 10,
 	idleTimeoutMills: 30000,
 }
 var canal = new pg.Pool(config);
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 //CONSULTAR COMENTARIO
 
@@ -62,9 +58,7 @@ canal.connect(function(erro, conexao, feito){
     return console.error('erro ao conectar no banco', erro);
   }
   var sql =
-	'insert into tb_comentario (avaliacao_comentario, id_usuario, conteudo_comentario, data_criacao, id_usuario, id_livro, id_lista)
-		values
-		(\''+ req.body.avaliacao + '\',\'' + req.body.usuario + '\',\'' + req.body.conteudo + '\',\'' + res.body.data'\')';
+	'insert into tb_comentario (avaliacao_comentario, id_usuario, conteudo_comentario, data_criacao, id_livro, id_lista) values	(\''+ req.body.avaliacao + '\',\'' + req.body.usuario + '\',\'' + req.body.conteudo + '\',\'' + res.body.data +'\')';
   console.log(sql);
 
   conexao.query(sql, function(erro, resultado){

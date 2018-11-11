@@ -101,7 +101,7 @@ constructor(){ }
     return url;
   }
 
-  postListByUserId(){
+  postList(){
     let url = 'http://localhost:3000/lista/'
     return url;
   }

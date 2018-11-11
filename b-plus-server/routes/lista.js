@@ -6,16 +6,12 @@ var pg = require('pg');
 var config = {
 	user: "postgres",
 	database: "tic",
+	password:"Khaleesi2603",
 	port: 5432,
 	max: 10,
 	idleTimeoutMills: 30000,
 }
 var canal = new pg.Pool(config);
-app.use(function(req, res, next) {
-  res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
-  next();
-});
 
 //CONSULTAR LISTA
 
@@ -25,7 +21,7 @@ canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'select * from tb_lista order by id_lista';
+  var sql = 'select * from tb_listas order by id_lista';
   conexao.query(sql, function(erro, resultado){
     feito();
     if (erro){
@@ -42,7 +38,7 @@ canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'select * from lista where id_lista = ' + req.params.id;
+  var sql = 'select * from tb_listas where id_lista = ' + req.params.id;
   console.log(sql);
   conexao.query(sql, function(erro, resultado){
     feito();
@@ -60,7 +56,7 @@ canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'select * from lista where id_usuario = ' + req.params.id;
+  var sql = 'select * from tb_listas where id_usuario = ' + req.params.id;
   console.log(sql);
   conexao.query(sql, function(erro, resultado){
     feito();
@@ -79,10 +75,7 @@ canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql =
-	'insert into tb_lista (nome_lista, categoria_lista, situacao_lista, tipo_lista, data_criacao)
-		values
-		(\'' + req.body.nome + '\', \''+ req.body.categoria + '\',\'' + req.body.situacao + '\',\'' + req.body.tipo + '\',\'' +inserir data aqui'\')';
+  var sql = 'insert into tb_listas (nome_lista, id_usuario, categoria_lista, situacao_lista, tipo_lista, data_criacao)	values (\'' + req.body.nome + '\', \''+ req.body.user + '\', \''+ req.body.categoria + '\',\'' + req.body.situacao + '\',\'' + req.body.tipo + '\',\'' + res.body.date +'\')';
   console.log(sql);
 
   conexao.query(sql, function(erro, resultado){
@@ -102,8 +95,7 @@ canal.connect(function(erro, conexao, feito){
     return console.error('erro ao conectar no banco', erro);
   }
   var sql =
-	'insert into tb_lista_livro (id_lista, id_livro) values
-		(\'' + req.body.id_lista + '\', \''+ req.body.id_livro + '\')';
+	'insert into tb_lista_livro (id_lista, id_livro) values (\'' + req.body.id_lista + '\', \''+ req.body.id_livro + '\')';
   console.log(sql);
 
   conexao.query(sql, function(erro, resultado){
@@ -123,7 +115,7 @@ router.put('/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-		var sql = "update tb_lista set nome_lista = '" + req.body.nome +
+		var sql = "update tb_listas set nome_lista = '" + req.body.nome +
 				"', categoria_lista = '" + req.body.categoria + "', situacao_lista = '" + req.body.situacao +
         "' where id_lista =  " + req.body.codigo;
     console.log(sql);
@@ -144,7 +136,7 @@ router.delete('/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-    var sql = 'delete from tb_lista where id_lista =  ' + req.params.id;
+    var sql = 'delete from tb_listas where id_lista =  ' + req.params.id;
     console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();
