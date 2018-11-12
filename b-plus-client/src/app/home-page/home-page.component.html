@@ -2,9 +2,9 @@
   <p class="main-title">
     Minha Biblioteca
   </p>
-  <div class="container global-div">
-    <div class="row" *ngFor="let lista of lista; let i = index">
-      <div class="col-md-12"(click)="expandList(i)">
+  <div class="container global-div" *ngFor="let lista of lista; let i = index">
+    <div class="row">
+      <div class="col-md-12">
         {{this.lista.nome_lista}}
 
         Título do Livro
@@ -12,7 +12,7 @@
         <!-- Inserir botão e icone de rolagem aqui  -->
 
         Expandir
-        <!-- Inserir botão e icone aqui  -->
+        <button (click)=expandList(i)>Expandir</button>
 
         Editar
         <!-- Inserir botão, divisoria e icone aqui  -->

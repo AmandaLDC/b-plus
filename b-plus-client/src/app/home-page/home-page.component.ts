@@ -10,7 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  lista: any = {};
+  lista: any;
   user : any = JSON.parse(localStorage.getItem("user"));
   options : any = {
                     Headers: new HttpHeaders({
@@ -46,13 +46,14 @@ export class HomePageComponent implements OnInit {
   }
 
   pageInit(data){
-    let endpoint = this._apiService.postList();
-    if(data.lenght == 0){
+    this.lista = data;
+    const endpoint = this._apiService.postList();
+    if(this.lista == 0){
       let dn = this.getDate();
       let lista_notification = {
         nome_lista: "Notificações",
         id_usuario: this.user.id_aluno,
-        categoria_lista: null,
+        categoria_lista: "Notificações",
         situacao_lista: "PES",
         tipo_lista: "NOT",
         data_criacao: dn
@@ -61,7 +62,7 @@ export class HomePageComponent implements OnInit {
       let lista_favoritos = {
         nome_lista: "Favoritos",
         id_usuario: this.user.id_aluno,
-        categoria_lista: null,
+        categoria_lista: "Favoritos",
         situacao_lista: "PES",
         tipo_lista: "FAV",
         data_criacao: dn
@@ -82,11 +83,9 @@ export class HomePageComponent implements OnInit {
       });
       let getendpoint = this._apiService.getListByUserId();
       this.http.get(endpoint, this.options).subscribe(data => {
-        this.lista = data;
+        this.router.navigate(['/home-page']);
       });
 
-    } else {
-      this.lista = data;
     }
   }
 
