@@ -116,7 +116,7 @@ export class BookInfoComponent implements OnInit {
   getnd(data) {
     let r = 0;
     for (const x in data) {
-      if (data[x].situacao_exemplar == 'D') {
+      if (data[x].situacao_exemplar === 'D') {
         r++;
       }
     }
