@@ -96,8 +96,8 @@ constructor(){ }
 //    return url;
 //  }
 
-  getListByUserId(){
-    let url = 'http://localhost:3000/lista/user/' + this.user.id_aluno;
+  getListByUserId(id){
+    let url = 'http://localhost:3000/lista/user/' + id;
     return url;
   }
 

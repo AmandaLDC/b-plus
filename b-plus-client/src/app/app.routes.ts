@@ -5,6 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ExpandListComponent } from './expand-list/expand-list.component';
 import { CreateListComponent } from './create-list/create-list.component';
 import { UpdateListComponent } from './update-list/update-list.component';
+import { UpdateReviewComponent } from './update-list/update-review.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { RecommendedPageComponent } from './recommended-page/recommended-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';
@@ -21,6 +22,7 @@ export const ROUTES: Routes = [
     {path: 'expand-list', component: ExpandListComponent},
     {path: 'create-list', component: CreateListComponent},
     {path: 'update-list', component: UpdateListComponent},
+    {path: 'update-review', component: UpdateReviewComponent},
     {path: 'book-info', component: BookInfoComponent},
     {path: 'user-info', component: UserInfoComponent},
     {path: 'recommended-page', component: RecommendedPageComponent},

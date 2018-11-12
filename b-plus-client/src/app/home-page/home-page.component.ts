@@ -28,10 +28,14 @@ export class HomePageComponent implements OnInit {
       private _apiService: ApiService) {}
 
   ngOnInit() {
-    let endpoint = this._apiService.getListByUserId();
-    this.http.get(endpoint, this.options).subscribe(data => {
-      this.pageInit(data);
-    })
+    if(this.user == null){
+      this.router.navigate(['/home-page']);
+    } else {
+      let endpoint = this._apiService.getListByUserId(this.user.id_aluno);
+      this.http.get(endpoint, this.options).subscribe(data => {
+        this.pageInit(data);
+      })
+    }
   }
 
   getDate(){
@@ -83,9 +87,9 @@ export class HomePageComponent implements OnInit {
       });
       let getendpoint = this._apiService.getListByUserId();
       this.http.get(endpoint, this.options).subscribe(data => {
-        this.router.navigate(['/home-page']);
+        this.lista = data;
       });
-
+      this.router.navigate(['/home-page']);
     }
   }
 

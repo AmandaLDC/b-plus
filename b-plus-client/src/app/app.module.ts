@@ -23,7 +23,6 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { HttpClientModule } from '@angular/common/http';
 import { UserInfoComponent } from './user-info/user-info.component';
-import { CreateReviewComponent } from './create-review/create-review.component';
 import { UpdateReviewComponent } from './update-review/update-review.component';
 
 @NgModule({
