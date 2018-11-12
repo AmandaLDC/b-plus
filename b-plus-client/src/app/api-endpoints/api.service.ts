@@ -5,62 +5,62 @@ import { Injectable } from '@angular/core';
 })
 export class ApiService {
 
-user: any = JSON.parse(localStorage.getItem('user'));
-book: any = JSON.parse(localStorage.getItem('book'));
-list: any = JSON.parse(localStorage.getItem('list'));
-constructor() { }
+user : any = JSON.parse(localStorage.getItem("user"));
+book : any = JSON.parse(localStorage.getItem("book"));
+list : any = JSON.parse(localStorage.getItem("list"));
+constructor(){ }
 
 
-// ENDPOINTS THAT CALL STUDENT USER DATA
+//ENDPOINTS THAT CALL STUDENT USER DATA
 
-  getLogin(id) {
+  getLogin(id){
     let url = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + id;
     return url;
   }
 
-  getAluno() {
+  getAluno(){
     let url = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + this.user.id_aluno;
     return url;
   }
 
-  getDisciplinaAluno() {
+  getDisciplinaAluno(){
     let url = 'http://dev2.unifacef.com.br:8000/api/inscricoesDisciplinaGrad/id_aluno' + this.user.id_aluno;
     return url;
   }
 
-  getEmprestimoAluno() {
+  getEmprestimoAluno(){
     let url = 'http://dev2.unifacef.com.br:8000/api/emprestimoAluno/' + this.user.id_aluno;
     return url;
   }
 
 
-// ENDPOINTS THAT CALL STAFF USER DATA
+//ENDPOINTS THAT CALL STAFF USER DATA
 
-  getDocente() {
+  getDocente(){
     let url = 'http://dev2.unifacef.com.br:8000/api/docente/' + this.user.id_docente;
     return url;
   }
 
-  getDisciplinaDocente() {
+  getDisciplinaDocente(){
     let url = 'http://dev2.unifacef.com.br:8000/api/disciplinaDocente/' + this.user.id_docente;
     return url;
   }
 
-  getEmprestimoDocente() {
+  getEmprestimoDocente(){
     let url = 'http://dev2.unifacef.com.br:8000/api/emprestimoAluno/' + this.user.id_docente;
     return url;
   }
 
-  // ENDPOINTS THAT CALL DISCIPLINES DATA
+  //ENDPOINTS THAT CALL DISCIPLINES DATA
 
-  getDisciplina() {
+  getDisciplina(){
     let url = 'http://dev2.unifacef.com.br:8000/api/disciplinaGrad/' //+ this.disciplina.id_disciplina_serie;
     return url;
   }
 
-  // ENDPOINTS THAT CALL FOR BOOK DATA
+  //ENDPOINTS THAT CALL FOR BOOK DATA
 
-  getLivros() {
+  getLivros(){
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplar';
     return url;
   }
@@ -70,7 +70,7 @@ constructor() { }
     return url;
   }
 
-  getLivroByIdMaterial() {
+  getLivroByIdMaterial(){
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplarMaterial' + this.book.id_material;
     return url;
   }
@@ -106,7 +106,7 @@ constructor() { }
     return url;
   }
 
-  listId() {
+  listId(){
     let url = 'http://localhost:3000/lista/' + this.list.id_lista;
     return url;
   }

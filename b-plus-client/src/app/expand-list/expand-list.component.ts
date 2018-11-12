@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class ExpandListComponent implements OnInit {
 
-
   lista: any = JSON.parse(localStorage.getItem('list'));
   user: any = JSON.parse(localStorage.getItem('user'));
   options: any = {
@@ -47,8 +46,7 @@ export class ExpandListComponent implements OnInit {
     this.router.navigate(['/create-review']);
   }
 
-
-  updateList(id){
+  updateList(){
     this.router.navigate(['/update-list']);
   }
 
