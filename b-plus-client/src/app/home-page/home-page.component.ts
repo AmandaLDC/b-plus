@@ -10,8 +10,7 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  model: any = {};
-  lista: any;
+  lista: any = {};
   user : any = JSON.parse(localStorage.getItem("user"));
   options : any = {
                     Headers: new HttpHeaders({
@@ -38,9 +37,16 @@ export class HomePageComponent implements OnInit {
   pageInit(data){
     let endpoint = this._apiService.postList();
     if(!data){
-      let dn = Date.now();
+      let today = new Date();
+      let dd = today.getDate();
+      console.log(dd);
+      let mm = today.getMonth()+1;
+      console.log(mm);
+      let yyyy = today.getFullYear();
+      let dn = dd + '/' + mm + '/' + yyyy;
       console.log(dn)
       let lista_notification = {
+        id_lista: 0,
         nome_lista: "Notificações",
         id_usuario: this.user.id_aluno,
         categoria_lista: null,
@@ -49,7 +55,8 @@ export class HomePageComponent implements OnInit {
         data_criacao: dn
       }
 
-      let lista_favorita = {
+      let lista_favoritos = {
+        id_lista: 1,
         nome_lista: "Favoritos",
         id_usuario: this.user.id_aluno,
         categoria_lista: null,
@@ -57,14 +64,20 @@ export class HomePageComponent implements OnInit {
         tipo_lista: "FAV",
         data_criacao: dn
       }
-      
-      this.http.post(endpoint, [lista_notification, lista_favorita], this.options)
+
+      this.http.post(endpoint, lista_notification, this.options)
       .subscribe(resposta => {
           console.log("Inserido com sucesso");
       }, (erro) => {
         console.log(erro);
       });
 
+      this.http.post(endpoint, lista_favoritos, this.options)
+      .subscribe(resposta => {
+          console.log("Inserido com sucesso");
+      }, (erro) => {
+        console.log(erro);
+      });
 
       this.http.get(endpoint, this.options).subscribe(data => {
         this.lista = data;
@@ -73,6 +86,7 @@ export class HomePageComponent implements OnInit {
 
     } else {
       this.lista = data;
+      console.log(data);
     }
   }
 

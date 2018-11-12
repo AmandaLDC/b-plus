@@ -7,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class RecommendedPageComponent implements OnInit {
 
+  user : any = JSON.parse(localStorage.getItem("user"));
+
   constructor() { }
 
   ngOnInit() {

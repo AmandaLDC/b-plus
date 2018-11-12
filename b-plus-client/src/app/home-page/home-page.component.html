@@ -3,9 +3,9 @@
     Minha Biblioteca
   </p>
   <div class="container global-div">
-    <div class="row">
+    <div class="row" *ngFor="let lista of lista">
       <div class="col-md-12">
-        Livros Favoritos
+        {{this.lista.nome_lista}}
 
         Título do Livro
 
@@ -18,21 +18,6 @@
         <!-- Inserir botão, divisoria e icone aqui  -->
 
         Excluir
-        <!-- Inserir botão e icone aqui  -->
-
-        Whatsapp
-        <!-- Inserir botão e icone aqui  -->
-
-        Twitter
-        <!-- Inserir botão e icone aqui  -->
-
-        Facebook
-        <!-- Inserir botão e icone aqui  -->
-
-        E-mail
-        <!-- Inserir botão e icone aqui  -->
-
-        Nova Lista
         <!-- Inserir botão e icone aqui  -->
       </div>
     </div>
