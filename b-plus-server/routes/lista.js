@@ -76,7 +76,7 @@ canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'insert into tb_listas (id_lista, nome_lista, id_usuario, categoria_lista, situacao_lista, tipo_lista, data_criacao) values (\'' + req.body.id_lista + '\', \'' + req.body.nome_lista + '\', \''+ req.body.id_usuario + '\', \''+ req.body.categoria_lista + '\',\'' + req.body.situacao_lista + '\',\'' + req.body.tipo_lista + '\',\'' + req.body.data_criacao +'\')';
+  var sql = 'insert into tb_listas (nome_lista, id_usuario, categoria_lista, situacao_lista, tipo_lista, data_criacao) values (\'' + req.body.nome_lista + '\', \''+ req.body.id_usuario + '\', \''+ req.body.categoria_lista + '\',\'' + req.body.situacao_lista + '\',\'' + req.body.tipo_lista + '\',\'' + req.body.data_criacao +'\')';
   console.log(sql);
 
   conexao.query(sql, function(erro, resultado){

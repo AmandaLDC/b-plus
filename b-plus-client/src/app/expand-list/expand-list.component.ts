@@ -10,7 +10,8 @@ import { Router } from '@angular/router';
 })
 export class ExpandListComponent implements OnInit {
 
-  lista: any = {};
+  //use localStorage to get list id from last page;
+  lista: any = JSON.parse(localStorage.getItem("list"));;
   user : any = JSON.parse(localStorage.getItem("user"));
   options : any = {
                     Headers: new HttpHeaders({
@@ -28,23 +29,26 @@ export class ExpandListComponent implements OnInit {
       private _apiService: ApiService) {}
 
   ngOnInit() {
-    let endpoint = this._apiService.getListById(this.id);
-    this.http.get(endpoint, this.options).subscribe(data => {
-      this.pageInit(data);
-    })
   }
 
   pageInit(data){
-    this.lista = data;
   }
 
   removeList(){
-    let endpoint = this._apiService.removeList(this.id);
-    this.http.remove(endpoint, this.options)
+    let endpoint = this._apiService.listId(this.lista.id_lista);
+    this.http.delete(endpoint, this.options)
     .subscribe(resposta => {
         this.ngOnInit();
         console.log("Remoção com sucesso");
     })
+  }
+
+  newReview(){
+    this.router.navigate(['/create-review']);
+  }
+
+  updateList(id){
+    this.router.navigate(['/aluno-edita', id]);
   }
 
 }

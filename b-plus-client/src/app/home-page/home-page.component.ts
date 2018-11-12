@@ -36,7 +36,7 @@ export class HomePageComponent implements OnInit {
 
   pageInit(data){
     let endpoint = this._apiService.postList();
-    if(!data){
+    if(data == null){
       let today = new Date();
       let dd = today.getDate();
       console.log(dd);
@@ -46,7 +46,6 @@ export class HomePageComponent implements OnInit {
       let dn = dd + '/' + mm + '/' + yyyy;
       console.log(dn)
       let lista_notification = {
-        id_lista: 0,
         nome_lista: "Notificações",
         id_usuario: this.user.id_aluno,
         categoria_lista: null,
@@ -56,7 +55,6 @@ export class HomePageComponent implements OnInit {
       }
 
       let lista_favoritos = {
-        id_lista: 1,
         nome_lista: "Favoritos",
         id_usuario: this.user.id_aluno,
         categoria_lista: null,
@@ -90,4 +88,8 @@ export class HomePageComponent implements OnInit {
     }
   }
 
+  expandList(){
+    localStorage.setItem("list", JSON.stringify(this.lista));
+    this.router.navigate(['/expand-list']);
+  }
 }

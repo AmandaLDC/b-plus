@@ -7,7 +7,7 @@ export class ApiService {
 
 user : any = JSON.parse(localStorage.getItem("user"));
 book : any = JSON.parse(localStorage.getItem("book"));
-
+list : any = JSON.parse(localStorage.getItem("list"));
 constructor(){ }
 
 
@@ -103,6 +103,11 @@ constructor(){ }
 
   postList(){
     let url = 'http://localhost:3000/lista/'
+    return url;
+  }
+
+  listId(){
+    let url = 'http://localhost:3000/lista/' + this.list.id_lista;
     return url;
   }
 }

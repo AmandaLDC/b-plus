@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SearchService } from '../search/search.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-book-info',
@@ -34,7 +35,8 @@ export class BookInfoComponent implements OnInit {
 
   constructor(
     private _searchService: SearchService,
-    private http: HttpClient) { }
+    private http: HttpClient,
+    private router: Router) { }
 
   ngOnInit() {
     const livro_endpoint = this._searchService.getdataforid_material();
@@ -121,9 +123,8 @@ export class BookInfoComponent implements OnInit {
     return r;
   }
 
-  trataTitulo(str){
-    str.toLowerCase();
-    str.charAt(0).toUpperCase();
-    return str;
+  newReview(){
+    this.router.navigate(['/create-review']);
   }
+
 }
