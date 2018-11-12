@@ -10,19 +10,10 @@ import { Router } from '@angular/router';
 })
 export class ExpandListComponent implements OnInit {
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  // use localStorage to get list id from last page;
+
   lista: any = JSON.parse(localStorage.getItem('list'));
   user: any = JSON.parse(localStorage.getItem('user'));
   options: any = {
-=======
-=======
->>>>>>> bbdb5a22f2181a88cb7794dbc249a465300af6ce
-  lista: any = JSON.parse(localStorage.getItem("list"));;
-  user : any = JSON.parse(localStorage.getItem("user"));
-  options : any = {
->>>>>>> bbdb5a22f2181a88cb7794dbc249a465300af6ce
                     Headers: new HttpHeaders({
                       'Content-Type': 'application/json',
                       'Access-Control-Allow-Origin' : '*',
@@ -43,16 +34,8 @@ export class ExpandListComponent implements OnInit {
   pageInit(data) {
   }
 
-<<<<<<< HEAD
   removeList() {
     const endpoint = this._apiService.listId();
-=======
-  removeList(){
-    let endpoint = this._apiService.listId();
-<<<<<<< HEAD
->>>>>>> bbdb5a22f2181a88cb7794dbc249a465300af6ce
-=======
->>>>>>> bbdb5a22f2181a88cb7794dbc249a465300af6ce
     this.http.delete(endpoint, this.options)
     .subscribe(resposta => {
         this.ngOnInit();
@@ -64,18 +47,9 @@ export class ExpandListComponent implements OnInit {
     this.router.navigate(['/create-review']);
   }
 
-<<<<<<< HEAD
-<<<<<<< HEAD
-  updateList(id) {
-    this.router.navigate(['/aluno-edita', id]);
-=======
+
   updateList(id){
     this.router.navigate(['/update-list']);
->>>>>>> bbdb5a22f2181a88cb7794dbc249a465300af6ce
-=======
-  updateList(id){
-    this.router.navigate(['/update-list']);
->>>>>>> bbdb5a22f2181a88cb7794dbc249a465300af6ce
   }
 
 }
