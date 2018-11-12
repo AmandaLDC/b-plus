@@ -34,17 +34,21 @@ export class HomePageComponent implements OnInit {
     })
   }
 
+  getDate(){
+    let today = new Date();
+    let dd = today.getDate();
+    console.log(dd);
+    let mm = today.getMonth()+1;
+    console.log(mm);
+    let yyyy = today.getFullYear();
+    let dn = dd + '/' + mm + '/' + yyyy;
+    return dn;
+  }
+
   pageInit(data){
     let endpoint = this._apiService.postList();
     if(data == null){
-      let today = new Date();
-      let dd = today.getDate();
-      console.log(dd);
-      let mm = today.getMonth()+1;
-      console.log(mm);
-      let yyyy = today.getFullYear();
-      let dn = dd + '/' + mm + '/' + yyyy;
-      console.log(dn)
+      let dn = this.getDate();
       let lista_notification = {
         nome_lista: "Notificações",
         id_usuario: this.user.id_aluno,
@@ -88,8 +92,8 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  expandList(){
-    localStorage.setItem("list", JSON.stringify(this.lista));
+  expandList(i){
+    localStorage.setItem("list", JSON.stringify(this.lista[i]));
     this.router.navigate(['/expand-list']);
   }
 }

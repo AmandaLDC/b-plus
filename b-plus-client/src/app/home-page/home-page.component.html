@@ -3,8 +3,8 @@
     Minha Biblioteca
   </p>
   <div class="container global-div">
-    <div class="row" *ngFor="let lista of lista">
-      <div class="col-md-12">
+    <div class="row" *ngFor="let lista of lista; let i = index">
+      <div class="col-md-12"(click)="expandList(i)">
         {{this.lista.nome_lista}}
 
         Título do Livro
