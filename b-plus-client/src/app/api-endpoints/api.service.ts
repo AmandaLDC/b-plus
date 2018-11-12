@@ -34,7 +34,7 @@ constructor(){ }
   }
 
 
-//ENDPOINTS THAT CALL STAFF USER DATA
+// ENDPOINTS THAT CALL STAFF USER DATA
 
   getDocente(){
     let url = 'http://dev2.unifacef.com.br:8000/api/docente/' + this.user.id_docente;
@@ -51,14 +51,14 @@ constructor(){ }
     return url;
   }
 
-  //ENDPOINTS THAT CALL DISCIPLINES DATA
+  // ENDPOINTS THAT CALL DISCIPLINES DATA
 
   getDisciplina(){
     let url = 'http://dev2.unifacef.com.br:8000/api/disciplinaGrad/' //+ this.disciplina.id_disciplina_serie;
     return url;
   }
 
-  //ENDPOINTS THAT CALL FOR BOOK DATA
+  // ENDPOINTS THAT CALL FOR BOOK DATA
 
   getLivros(){
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplar';

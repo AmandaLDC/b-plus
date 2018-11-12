@@ -10,73 +10,73 @@ import { Router } from '@angular/router';
 })
 export class HomePageComponent implements OnInit {
 
-  lista: any = {};
-  user : any = JSON.parse(localStorage.getItem("user"));
-  options : any = {
-                    Headers: new HttpHeaders({
-                      'Content-Type': 'application/json',
-                      "Access-Control-Allow-Origin" : '*',
-                      "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-                      "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
-                    }),
-                    withCredentials: false
-                  }
-
   constructor(
       private http: HttpClient,
       private router: Router,
       private _apiService: ApiService) {}
 
-  ngOnInit() {
-    let endpoint = this._apiService.getListByUserId();
-    this.http.get(endpoint, this.options).subscribe(data => {
-      this.pageInit(data);
-    })
-  }
+  lista: any = {};
+  user: any = JSON.parse(localStorage.getItem('user'));
+  options: any = {
+                    Headers: new HttpHeaders({
+                      'Content-Type': 'application/json',
+                      'Access-Control-Allow-Origin' : '*',
+                      'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+                      'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
+                    }),
+                    withCredentials: false
+                  };
 
-  getDate(){
-    let today = new Date();
-    let dd = today.getDate();
+  static getDate() {
+    const today = new Date();
+    const dd = today.getDate();
     console.log(dd);
-    let mm = today.getMonth()+1;
+    const mm = today.getMonth() + 1;
     console.log(mm);
-    let yyyy = today.getFullYear();
-    let dn = dd + '/' + mm + '/' + yyyy;
+    const yyyy = today.getFullYear();
+    const dn = dd + '/' + mm + '/' + yyyy;
     return dn;
   }
 
-  pageInit(data){
-    let endpoint = this._apiService.postList();
-    if(data == null){
-      let dn = this.getDate();
-      let lista_notification = {
-        nome_lista: "Notificações",
-        id_usuario: this.user.id_aluno,
-        categoria_lista: null,
-        situacao_lista: "PES",
-        tipo_lista: "NOT",
-        data_criacao: dn
-      }
+  ngOnInit() {
+    const endpoint = this._apiService.getListByUserId();
+    this.http.get(endpoint, this.options).subscribe(data => {
+      this.pageInit(data);
+    });
+  }
 
-      let lista_favoritos = {
-        nome_lista: "Favoritos",
+  pageInit(data) {
+    const endpoint = this._apiService.postList();
+    if (data == null) {
+      const dn = HomePageComponent.getDate();
+      const lista_notification = {
+        nome_lista: 'Notificações',
         id_usuario: this.user.id_aluno,
         categoria_lista: null,
-        situacao_lista: "PES",
-        tipo_lista: "FAV",
+        situacao_lista: 'PES',
+        tipo_lista: 'NOT',
         data_criacao: dn
-      }
+      };
+
+      const lista_favoritos = {
+        nome_lista: 'Favoritos',
+        id_usuario: this.user.id_aluno,
+        categoria_lista: null,
+        situacao_lista: 'PES',
+        tipo_lista: 'FAV',
+        data_criacao: dn
+      };
 
       this.http.post(endpoint, lista_notification, this.options)
       .subscribe(resposta => {
-          console.log("Inserido com sucesso");
+          console.log('Inserido com sucesso');
       }, (erro) => {
         console.log(erro);
       });
 
       this.http.post(endpoint, lista_favoritos, this.options)
       .subscribe(resposta => {
-          console.log("Inserido com sucesso");
+          console.log('Inserido com sucesso');
       }, (erro) => {
         console.log(erro);
       });
@@ -92,8 +92,8 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  expandList(i){
-    localStorage.setItem("list", JSON.stringify(this.lista[i]));
+  expandList(i) {
+    localStorage.setItem('list', JSON.stringify(this.lista[i]));
     this.router.navigate(['/expand-list']);
   }
 }

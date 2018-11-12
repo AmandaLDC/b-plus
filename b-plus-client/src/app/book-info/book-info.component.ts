@@ -11,27 +11,27 @@ import { Router } from '@angular/router';
 export class BookInfoComponent implements OnInit {
 
   results: any = {
-                  titulo : "",
-                  tipo : "",
+                  titulo : '',
+                  tipo : '',
                   autor : [],
                   volume : 0,
                   edicao : 0,
-                  ano : "",
-                  editora : "",
+                  ano : '',
+                  editora : '',
                   assuntos : [],
                   n_disponivel : 0,
                   n_total : 0
                 };
 
-    options : any = {
+    options: any = {
                       Headers: new HttpHeaders({
                         'Content-Type': 'application/json',
-                        "Access-Control-Allow-Origin" : '*',
-                        "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-                        "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+                        'Access-Control-Allow-Origin' : '*',
+                        'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+                        'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
                       }),
                       withCredentials: false
-                    }
+                    };
 
   constructor(
     private _searchService: SearchService,
@@ -41,37 +41,37 @@ export class BookInfoComponent implements OnInit {
   ngOnInit() {
     const livro_endpoint = this._searchService.getdataforid_material();
 
-    if(livro_endpoint != "0"){
+    if (livro_endpoint !== '0') {
       this.http.get(livro_endpoint, this.options).subscribe(data => {
         this.pageInit(data);
-      })
+      });
     } else {
-      JSON.parse(localStorage.getItem("book"));
+      JSON.parse(localStorage.getItem('book'));
     }
   }
 
-  pageInit(data){
+  pageInit(data) {
     let autor_endpoint = this._searchService.getdataforautor();
     let assunto_endpoint = this._searchService.getdataforassunto();
-    let ex = data[0].id_exemplar;
+    const ex = data[0].id_exemplar;
     autor_endpoint = autor_endpoint + ex;
     assunto_endpoint = assunto_endpoint + ex;
 
-    let t = data[0].titulo_material;
-    let tipo = data[0].nome_tipo;
-    let ne = data[0].edicao_exemplar;
-    let ano = data[0].edicao_ano;
-    let ed = data[0].nome_editora;
-    let nd = this.getnd(data);
-    let nt = this.getnt(data);
+    const t = data[0].titulo_material;
+    const tipo = data[0].nome_tipo;
+    const ne = data[0].edicao_exemplar;
+    const ano = data[0].edicao_ano;
+    const ed = data[0].nome_editora;
+    const nd = this.getnd(data);
+    const nt = this.getnt(data);
     let v;
-    if(data[0].volume_exemplar == "0"){
-      v = "Único";
+    if (data[0].volume_exemplar === '0') {
+      v = 'Único';
     } else {
       v = data[0].volume_exemplar;
     }
     let autor;
-    let assuntos = [];
+    const assuntos = [];
 
 
     this.results = {
@@ -85,45 +85,45 @@ export class BookInfoComponent implements OnInit {
       assuntos : assuntos,
       n_disponivel : nd,
       n_total : nt
-    }
+    };
 
     this.http.get(autor_endpoint, this.options).subscribe(response => {
       this.getAutor(response);
       this.http.get(assunto_endpoint, this.options).subscribe(e => {
         this.getAssunto(e);
-        localStorage.setItem("book", JSON.stringify(this.results));
-      })
-    })
+        localStorage.setItem('book', JSON.stringify(this.results));
+      });
+    });
   }
 
-  getAutor(data){
+  getAutor(data) {
     this.results.autor = data;
   }
 
-  getAssunto(data){
+  getAssunto(data) {
     this.results.assuntos = data;
   }
 
 
-  getnt(data){
+  getnt(data) {
     let r = 0;
-    for(let x in data){
+    for (const x in data) {
       r++;
     }
     return r;
   }
 
-  getnd(data){
+  getnd(data) {
     let r = 0;
-    for(let x in data){
-      if(data[x].situacao_exemplar == "D"){
+    for (const x in data) {
+      if (data[x].situacao_exemplar == 'D') {
         r++;
       }
     }
     return r;
   }
 
-  newReview(){
+  newReview() {
     this.router.navigate(['/create-review']);
   }
 

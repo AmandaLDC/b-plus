@@ -2,7 +2,7 @@ var express = require('express');
 var router = express.Router();
 
 var pg = require('pg');
-
+/*
 var config = {
 	user: "postgres",
 	database: "tic",
@@ -10,7 +10,17 @@ var config = {
 	port: 5432,
 	max: 10,
 	idleTimeoutMills: 30000,
+} */
+
+var config = {
+    user: "postgres",
+    database: "tic",
+    password:"facefbd",
+    port: 5432,
+    max: 10,
+    idleTimeoutMills: 30000,
 }
+
 var canal = new pg.Pool(config);
 
 //CONSULTAR LISTA

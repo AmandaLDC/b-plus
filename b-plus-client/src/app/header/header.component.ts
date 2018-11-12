@@ -22,10 +22,10 @@ export class HeaderComponent implements OnInit {
     this.queryField.valueChanges
     .distinctUntilChanged()
     .subscribe(queryField => this._searchService.search(queryField)
-    .subscribe(response => this.results = response))
+    .subscribe(response => this.results = response));
   }
 
-  onClick(str : string){
+  onClick(str: string) {
     this._searchService.save(str);
     this.results = [];
     this.queryField = new FormControl();
