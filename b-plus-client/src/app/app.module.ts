@@ -41,7 +41,6 @@ import { UpdateReviewComponent } from './update-review/update-review.component';
     HeaderComponent,
     FooterComponent,
     UserInfoComponent,
-    CreateReviewComponent,
     UpdateReviewComponent,
   ],
   imports: [

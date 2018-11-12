@@ -5,7 +5,7 @@ import { HomePageComponent } from './home-page/home-page.component';
 import { ExpandListComponent } from './expand-list/expand-list.component';
 import { CreateListComponent } from './create-list/create-list.component';
 import { UpdateListComponent } from './update-list/update-list.component';
-import { UpdateReviewComponent } from './update-list/update-review.component';
+import { UpdateReviewComponent } from './update-review/update-review.component';
 import { BookInfoComponent } from './book-info/book-info.component';
 import { RecommendedPageComponent } from './recommended-page/recommended-page.component';
 import { SearchPageComponent } from './search-page/search-page.component';

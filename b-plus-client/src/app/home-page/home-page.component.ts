@@ -85,7 +85,7 @@ export class HomePageComponent implements OnInit {
       }, (erro) => {
         console.log(erro);
       });
-      let getendpoint = this._apiService.getListByUserId();
+      let getendpoint = this._apiService.getListByUserId(this.user.id_aluno);
       this.http.get(endpoint, this.options).subscribe(data => {
         this.lista = data;
       });
