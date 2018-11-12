@@ -10,7 +10,6 @@ import { Router } from '@angular/router';
 })
 export class ExpandListComponent implements OnInit {
 
-  //use localStorage to get list id from last page;
   lista: any = JSON.parse(localStorage.getItem("list"));;
   user : any = JSON.parse(localStorage.getItem("user"));
   options : any = {
@@ -35,7 +34,7 @@ export class ExpandListComponent implements OnInit {
   }
 
   removeList(){
-    let endpoint = this._apiService.listId(this.lista.id_lista);
+    let endpoint = this._apiService.listId();
     this.http.delete(endpoint, this.options)
     .subscribe(resposta => {
         this.ngOnInit();
@@ -48,7 +47,7 @@ export class ExpandListComponent implements OnInit {
   }
 
   updateList(id){
-    this.router.navigate(['/aluno-edita', id]);
+    this.router.navigate(['/update-list']);
   }
 
 }
