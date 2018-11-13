@@ -33,7 +33,7 @@ canal.connect(function(erro, conexao, feito){
 })
 
 //Consulta Os Comentários Por Id_Lista
-router.get('/:id', function (req, res, next) {
+router.get('/lista/:id', function (req, res, next) {
 canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
@@ -51,7 +51,7 @@ canal.connect(function(erro, conexao, feito){
 })
 
 //Consulta Os Comentários Por Id_Livros
-router.get('/:id', function (req, res, next) {
+router.get('/livro/:id', function (req, res, next) {
 canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
@@ -69,7 +69,7 @@ canal.connect(function(erro, conexao, feito){
 })
 
 //Consulta Os Comentarios Por id_usuario
-router.get('/user/:id', function (req, res, next) {
+router.get('/usuario/:id', function (req, res, next) {
 canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
@@ -111,7 +111,7 @@ canal.connect(function(erro, conexao, feito){
 //ATUALIZAR COMENTARIO
 
 //Atualizar Comentario De Lista
-router.put('/:id', function (req, res, next) {
+router.put('/lista/:id', function (req, res, next) {
 	canal.connect(function(erro, conexao, feito){
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
@@ -131,7 +131,7 @@ router.put('/:id', function (req, res, next) {
 })
 
 //Atualizar Comentario De Livro
-router.put('/:id', function (req, res, next) {
+router.put('/livro/:id', function (req, res, next) {
 	canal.connect(function(erro, conexao, feito){
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
@@ -153,7 +153,7 @@ router.put('/:id', function (req, res, next) {
 //REMOVER COMENTARIO
 
 //Remover Comentario De Lista
-router.delete('/:id', function (req, res, next) {
+router.delete('/lista/:id', function (req, res, next) {
 	canal.connect(function(erro, conexao, feito){
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
@@ -171,7 +171,7 @@ router.delete('/:id', function (req, res, next) {
 })
 
 //Remover Comentario De Livro
-router.delete('/:id', function (req, res, next) {
+router.delete('/livro/:id', function (req, res, next) {
 	canal.connect(function(erro, conexao, feito){
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
