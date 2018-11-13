@@ -64,7 +64,6 @@ canal.connect(function(erro, conexao, feito){
       return console.error('Erro na consulta da tabela', erro);
     }
     res.json(resultado.rows);
-		console.log(res);
   });
 });
 })
@@ -117,9 +116,9 @@ router.put('/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-		var sql = "update tb_listas set nome_lista = '" + req.body.nome +
-				"', categoria_lista = '" + req.body.categoria + "', situacao_lista = '" + req.body.situacao +
-        "' where id_lista =  " + req.body.codigo;
+		var sql = "update tb_listas set nome_lista = '" + req.body.nome_lista +
+				"', categoria_lista = '" + req.body.categoria_lista + "', situacao_lista = '" + req.body.situacao_lista +
+        "' where id_lista =  " + req.params.id;
     console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();

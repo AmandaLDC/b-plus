@@ -110,4 +110,9 @@ constructor(){ }
     let url = 'http://localhost:3000/lista/' + this.list.id_lista;
     return url;
   }
+
+  removeList(id){
+    let url = 'http://localhost:3000/lista/' + id;
+    return url;
+  }
 }

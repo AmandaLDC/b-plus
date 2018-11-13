@@ -33,12 +33,13 @@ export class ExpandListComponent implements OnInit {
   pageInit(data) {
   }
 
-  removeList() {
-    const endpoint = this._apiService.listId();
-    this.http.delete(endpoint, this.options)
-    .subscribe(resposta => {
-        this.ngOnInit();
-        console.log('Remoção com sucesso');
+  removeList(i){
+    const endpoint = this._apiService.removeList(this.lista.id_lista);
+    this.http.delete(endpoint, this.options).subscribe(resposta => {
+        console.log("Deletada com sucesso");
+        this.router.navigate(['/home-page']);
+    }, (erro) => {
+      console.log(erro);
     });
   }
 
@@ -47,7 +48,7 @@ export class ExpandListComponent implements OnInit {
   }
 
   updateList(){
-    this.router.navigate(['/update-list']);
+    this.router.navigate(['/update-list', this.lista.id_lista]);
   }
 
 }

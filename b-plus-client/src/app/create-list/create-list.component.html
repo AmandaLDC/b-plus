@@ -8,28 +8,28 @@
         <form class="form-signin" (ngSubmit)="onSubmit()">
           <div class="form-label-group">
             <label class="label-login">Nome</label>
-            <input type="text" class="form-control" name="id" placeholder="Nome" required autofocus>
+            <input type="text" class="form-control" name="nome" [(ngModel)]="model.nome" #nome="ngModel" placeholder="Nome" required autofocus>
           </div>
 
           <div class="form-label-group">
             <label class="label-login">Tipo de Lista</label>
             <label class="customradio"><span class="radiotextsty">Pública</span>
-              <input type="radio" name="radio">
+              <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="PUB">
               <span class="checkmark"></span>
             </label>
             <label class="customradio"><span class="radiotextsty">Pessoal</span>
-              <input type="radio" name="radio">
+              <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="PES">
               <span class="checkmark"></span>
             </label>
-            <label class="customradio"><span class="radiotextsty">Privada</span>
-              <input type="radio" name="radio">
+            <label class="customradio"><span class="radiotextsty">Oficial</span>
+              <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="OFI">
               <span class="checkmark"></span>
             </label>
           </div>
 
           <div class="form-label-group">
             <label class="label-login">Cursos</label>
-            <input list="cursos" name="curso">
+            <input list="cursos" name="curso" name="categoria" [(ngModel)]="model.categoria" #situacao="ngModel">
             <datalist id="cursos">
               <option value="Administração">
               <option value="Ciência da Computação">

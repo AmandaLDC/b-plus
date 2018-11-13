@@ -21,7 +21,7 @@ export const ROUTES: Routes = [
     {path: 'home-page', component: HomePageComponent},
     {path: 'expand-list', component: ExpandListComponent},
     {path: 'create-list', component: CreateListComponent},
-    {path: 'update-list', component: UpdateListComponent},
+    {path: 'update-list/:id', component: UpdateListComponent},
     {path: 'update-review', component: UpdateReviewComponent},
     {path: 'book-info', component: BookInfoComponent},
     {path: 'user-info', component: UserInfoComponent},

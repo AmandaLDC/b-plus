@@ -97,4 +97,24 @@ export class HomePageComponent implements OnInit {
     localStorage.setItem("list", JSON.stringify(this.lista[i]));
     this.router.navigate(['/expand-list']);
   }
+
+  editList(i){
+    this.router.navigate(['/update-list', this.lista[i].id_lista]);
+  }
+
+  createList(){
+    this.router.navigate(['/create-list']);
+  }
+
+  removeList(i){
+    const endpoint = this._apiService.removeList(this.lista[i].id_lista);
+    this.http.delete(endpoint, this.options).subscribe(resposta => {
+        console.log("Deletada com sucesso");
+        this.ngOnInit();
+    }, (erro) => {
+      console.log(erro);
+    });
+
+  }
+
 }

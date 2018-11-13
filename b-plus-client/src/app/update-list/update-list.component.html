@@ -5,25 +5,55 @@
   <div class="container global-div">
     <div class="row">
       <div class="col-md-12">
+        <form class="form-signin" (ngSubmit)="onSubmit()">
+          <div class="form-label-group">
+            <label class="label-login">Nome</label>
+            <input type="text" class="form-control" name="nome" [(ngModel)]="model.nome" #nome="ngModel" placeholder="Nome" required autofocus>
+          </div>
 
-        <!-- IGUAL A PAGINA DE CRIAR LISTA SÓ ADICIONA O BOTÃO EXCUIR -->
+          <div class="form-label-group">
+            <label class="label-login">Tipo de Lista</label>
+            <label class="customradio"><span class="radiotextsty">Pública</span>
+              <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="PUB">
+              <span class="checkmark"></span>
+            </label>
+            <label class="customradio"><span class="radiotextsty">Pessoal</span>
+              <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="PES">
+              <span class="checkmark"></span>
+            </label>
+            <label class="customradio"><span class="radiotextsty">Oficial</span>
+              <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="OFI">
+              <span class="checkmark"></span>
+            </label>
+          </div>
 
-        Nome:
-        <!-- Inserir input aqui  -->
-        Categoria:
-        <!-- Inserir input de escolha drop down aqui  -->
-        Tipo de Lista:
-        Pessoal
-        Pública
-        Oficial
-        <!-- Inserir input de escolha aqui  -->
-        Livros:
-        <!-- Inserir input de pesquisa aqui  -->
-        <!-- Inserir quadro pra pesquisa de livro aqui  -->
-        Salvar
-        <!-- Inserir botão aqui  -->
-        Excluir
-        <!-- Inserir botão aqui  -->
+          <div class="form-label-group">
+            <label class="label-login">Cursos</label>
+            <input list="cursos" name="curso" name="categoria" [(ngModel)]="model.categoria" #situacao="ngModel">
+            <datalist id="cursos">
+              <option value="Administração">
+              <option value="Ciência da Computação">
+              <option value="Ciências Contábeis">
+              <option value="Ciências Econômicas">
+              <option value="Comunicação Social (hab. Publicidade e Propaganda)">
+              <option value="Enfermagem">
+              <option value="Engenharia Civil">
+              <option value="Engenharia de Produção">
+              <option value="Engenharia de Software">
+              <option value="Letras">
+              <option value="Matemática">
+              <option value="Medicina">
+              <option value="Psicologia">
+              <option value="Sistemas de Informação">
+            </datalist>
+          </div>
+
+          Livros:
+          <!-- Inserir input de pesquisa aqui  -->
+          <!-- Inserir quadro pra pesquisa de livro aqui  -->
+
+          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Salvar</button>
+        </form>
       </div>
     </div>
   </div>

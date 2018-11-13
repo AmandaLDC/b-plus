@@ -6,26 +6,16 @@
     <div class="row">
       <div class="col-md-12">
         {{this.lista.nome_lista}}
-
-        Título do Livro
-
-        <!-- Inserir botão e icone de rolagem aqui  -->
-
-        Expandir
-        <button (click)=expandList(i)>Expandir</button>
-
-        Editar
-        <!-- Inserir botão, divisoria e icone aqui  -->
-
-        Excluir
-        <!-- Inserir botão e icone aqui  -->
+        <button type="button" (click)=expandList(i)>Expandir</button>
+        <button type="button" (click)="editList(i)">Editar</button>
+        <button type="button" (click)="removeList(i)">Excluir</button>
       </div>
     </div>
   </div>
   <div class="container global-div">
     <div class="row">
       <div class="col-md-2 col-md-offset-10">
-        <button type="button" class="button_home-page"> Nova Lista   <i class="fas fa-plus"></i></button>
+        <button type="button" class="button_home-page" (click)="createList()"> Nova Lista   <i class="fas fa-plus"></i></button>
       </div>
     </div>
   </div>
