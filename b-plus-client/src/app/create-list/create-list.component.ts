@@ -12,16 +12,16 @@ export class CreateListComponent implements OnInit {
 
   model: any = {};
   lista: any = [];
-  user : any = JSON.parse(localStorage.getItem("user"));
-  options : any = {
+  user: any = JSON.parse(localStorage.getItem('user'));
+  options: any = {
                     Headers: new HttpHeaders({
                       'Content-Type': 'application/json',
-                      "Access-Control-Allow-Origin" : '*',
-                      "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-                      "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+                      'Access-Control-Allow-Origin' : '*',
+                      'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+                      'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
                     }),
                     withCredentials: false
-                  }
+                  };
 
   constructor(
       private http: HttpClient,
@@ -31,11 +31,11 @@ export class CreateListComponent implements OnInit {
   ngOnInit() {
   }
 
-  onSubmit(){
+  onSubmit() {
     let endpoint = this._apiService.postList();
     this.http.post(endpoint, this.model, this.options)
     .subscribe(resposta => {
-      console.log("Inserido com sucesso");
+      console.log('Inserido com sucesso');
     }, (erro) => {
       console.log(erro);
     });

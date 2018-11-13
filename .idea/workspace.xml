@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="d17f911a-8d84-4ac4-bf54-7be728f3582d" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/b-plus-client/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/api-endpoints/api.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/api-endpoints/api.service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts" afterDir="false" />
+    <list default="true" id="d17f911a-8d84-4ac4-bf54-7be728f3582d" name="Default Changelist" comment="12/11 - forms">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.ts" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -25,18 +26,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
-          <entry key="html" value="4" />
+          <entry key="html" value="10" />
           <entry key="js" value="6" />
           <entry key="json" value="7" />
-          <entry key="ts" value="9" />
+          <entry key="ts" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
         <counts>
-          <entry key="HTML" value="4" />
+          <entry key="HTML" value="10" />
           <entry key="JSON" value="7" />
           <entry key="JavaScript" value="6" />
-          <entry key="TypeScript" value="9" />
+          <entry key="TypeScript" value="13" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.js.language.service.starts">
@@ -48,27 +49,80 @@
       <usages-collector id="statistics.vcs.git.usages" />
       <usages-collector id="statistics.file.types.edit">
         <counts>
+          <entry key="HTML" value="221" />
           <entry key="JavaScript" value="21" />
-          <entry key="PLAIN_TEXT" value="18" />
-          <entry key="TypeScript" value="59" />
+          <entry key="PLAIN_TEXT" value="25" />
+          <entry key="TypeScript" value="61" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
+          <entry key="html" value="221" />
           <entry key="js" value="21" />
-          <entry key="ts" value="59" />
-          <entry key="txt" value="18" />
+          <entry key="ts" value="61" />
+          <entry key="txt" value="25" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/api-endpoints/api.service.ts">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="112" column="1" lean-forward="true" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
+            <state relative-caret-position="341">
+              <caret line="38" column="13" lean-forward="true" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="289">
+              <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="69">
+              <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="272">
+              <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="35">
+              <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+              <folding>
+                <element signature="e#0#50#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -82,11 +136,15 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/b-plus-server/routes/lista.js" />
-        <option value="$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.ts" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.ts" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.ts" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/api-endpoints/api.service.ts" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.ts" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.ts" />
       </list>
     </option>
   </component>
@@ -1355,7 +1413,7 @@
               <item name="b-plus-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="api-endpoints" type="462c0819:PsiDirectoryNode" />
+              <item name="book-info" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="b-plus" type="b2602c69:ProjectViewProjectNode" />
@@ -1363,7 +1421,15 @@
               <item name="b-plus-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="book-info" type="462c0819:PsiDirectoryNode" />
+              <item name="create-list" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="b-plus" type="b2602c69:ProjectViewProjectNode" />
+              <item name="b-plus" type="462c0819:PsiDirectoryNode" />
+              <item name="b-plus-client" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="expand-list" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -1404,7 +1470,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1542045427211</updated>
-      <workItem from="1542045432700" duration="3825000" />
+      <workItem from="1542045432700" duration="7323000" />
     </task>
     <task id="LOCAL-00001" summary="12/11 - bugs fixed">
       <created>1542059541847</created>
@@ -1413,11 +1479,18 @@
       <option name="project" value="LOCAL" />
       <updated>1542059541847</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="12/11 - bugs fixed 2">
+      <created>1542060031119</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1542060031119</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="3825000" />
+    <option name="totallyTimeSpent" value="7323000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -1431,9 +1504,10 @@
       <window_info anchor="bottom" id="Version Control" show_stripe_button="false" />
       <window_info anchor="bottom" id="Terminal" />
       <window_info anchor="bottom" id="Event Log" side_tool="true" />
+      <window_info active="true" anchor="bottom" id="Messages" visible="true" weight="0.3295082" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.3295082" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.3295082" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -1456,7 +1530,9 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="12/11 - bugs fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="12/11 - bugs fixed" />
+    <MESSAGE value="12/11 - bugs fixed 2" />
+    <MESSAGE value="12/11 - forms" />
+    <option name="LAST_COMMIT_MESSAGE" value="12/11 - forms" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/b-plus-server/package-lock.json">
@@ -1479,9 +1555,6 @@
           </folding>
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.html">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/help-page/help-page.component.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -1518,16 +1591,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-server/routes/lista.js">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="36" column="16" lean-forward="true" selection-start-line="36" selection-start-column="16" selection-end-line="36" selection-end-column="16" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-server/package.json">
       <provider selected="true" editor-type-id="text-editor" />
@@ -1579,6 +1642,77 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="242">
           <caret line="112" column="1" lean-forward="true" selection-start-line="112" selection-start-column="1" selection-end-line="112" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="341">
+          <caret line="38" column="13" lean-forward="true" selection-start-line="38" selection-start-column="13" selection-end-line="38" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="28" lean-forward="true" selection-start-line="28" selection-end-line="28" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.spec.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <folding>
+            <element signature="e#0#73#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="323">
+          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="16" column="39" lean-forward="true" selection-start-line="16" selection-start-column="39" selection-end-line="16" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="35">
+          <caret line="19" column="17" lean-forward="true" selection-start-line="19" selection-start-column="17" selection-end-line="19" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="23" column="19" selection-start-line="23" selection-start-column="19" selection-end-line="23" selection-end-column="19" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="69">
+          <caret line="31" column="13" selection-start-line="31" selection-start-column="13" selection-end-line="31" selection-end-column="13" />
         </state>
       </provider>
     </entry>
