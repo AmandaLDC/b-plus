@@ -13,15 +13,15 @@ var config = {
 }
 var canal = new pg.Pool(config);
 
-//CONSULTAR COMENTARIO
+//CONSULTAR COMENTARIOS
 
-//Consulta Todas As Comentarios
+//Consulta Todos Os Comentarios
 router.get('/', function (req, res, next) {
 canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'select * from tb_comentario order by id_comentario';
+  var sql = 'select * from tb_comentario order by data_criacao';
   conexao.query(sql, function(erro, resultado){
     feito();
     if (erro){
@@ -32,13 +32,13 @@ canal.connect(function(erro, conexao, feito){
 });
 })
 
-//Consulta Comentarios Por Id_comentario
+//Consulta Os Comentários Por Id_Lista
 router.get('/:id', function (req, res, next) {
 canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql = 'select * from comentario where id_comentario = ' + req.params.id;
+  var sql = 'select * from tb_comentario where id_lista = ' + req.params.id;
   console.log(sql);
   conexao.query(sql, function(erro, resultado){
     feito();
@@ -50,15 +50,52 @@ canal.connect(function(erro, conexao, feito){
 });
 })
 
-//INSERIR COMENTARIO
-
-router.post('/', function (req, res, next) {
+//Consulta Os Comentários Por Id_Livros
+router.get('/:id', function (req, res, next) {
 canal.connect(function(erro, conexao, feito){
   if (erro){
     return console.error('erro ao conectar no banco', erro);
   }
-  var sql =
-	'insert into tb_comentario (avaliacao_comentario, id_usuario, conteudo_comentario, data_criacao, id_livro, id_lista) values	(\''+ req.body.avaliacao + '\',\'' + req.body.usuario + '\',\'' + req.body.conteudo + '\',\'' + res.body.data +'\')';
+  var sql = 'select * from tb_comentario where id_livro = ' + req.params.id;
+  console.log(sql);
+  conexao.query(sql, function(erro, resultado){
+    feito();
+    if (erro){
+      return console.error('Erro na consulta da tabela', erro);
+    }
+    res.json(resultado.rows[0]);
+  });
+});
+})
+
+//Consulta Os Comentarios Por id_usuario
+router.get('/user/:id', function (req, res, next) {
+canal.connect(function(erro, conexao, feito){
+  if (erro){
+    return console.error('erro ao conectar no banco', erro);
+  }
+  var sql = 'select * from tb_comentario where id_usuario = ' + req.params.id;
+  console.log(sql);
+  conexao.query(sql, function(erro, resultado){
+    feito();
+    if (erro){
+      return console.error('Erro na consulta da tabela', erro);
+    }
+    res.json(resultado.rows);
+  });
+});
+})
+
+//INSERIR COMENTARIOS
+
+//Inserir Comentario
+router.post('/', function (req, res, next) {
+canal.connect(function(erro, conexao, feito){
+	console.log(req.body)
+  if (erro){
+    return console.error('erro ao conectar no banco', erro);
+  }
+  var sql = 'insert into tb_comentario (id_comentario, conteudo_comentario, avaliaco_comentario, id_usuario, id_livro, id_lista, data_criacao) values (\'' + req.body.id_comentario + '\', \''+ req.body.conteudo_comentario + '\', \''+ req.body.avaliacao_comentario + '\',\'' + req.body.id_usuario + '\',\'' + req.body.id_livro + '\',\'' + req.body.data_criacao +'\')';
   console.log(sql);
 
   conexao.query(sql, function(erro, resultado){
@@ -73,14 +110,35 @@ canal.connect(function(erro, conexao, feito){
 
 //ATUALIZAR COMENTARIO
 
+//Atualizar Comentario De Lista
 router.put('/:id', function (req, res, next) {
 	canal.connect(function(erro, conexao, feito){
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-		var sql = "update tb_comentario set conteudo_comentario = '" + req.body.conteudo +
-				"', avaliacao_comentario = '" + req.body.avaliacao +
-        "' where id_comentario =  " + req.body.codigo;
+		var sql = "update tb_comentario set conteudo_comentario = '" + req.body.conteudo_comentario +
+				"', avaliaco_comentario = '" + req.body.avaliaco_comentario +
+        "' where id_lista =  " + req.params.id;
+    console.log(sql);
+		conexao.query(sql, function(erro, resultado){
+			feito();
+			if (erro){
+				return console.error('Erro na atualização dos dados', erro);
+			}
+			res.json(resultado.rows);
+		});
+	});
+})
+
+//Atualizar Comentario De Livro
+router.put('/:id', function (req, res, next) {
+	canal.connect(function(erro, conexao, feito){
+		if (erro){
+			return console.error('erro ao conectar no banco', erro);
+		}
+		var sql = "update tb_comentario set conteudo_comentario = '" + req.body.conteudo_comentario +
+				"', avaliaco_comentario = '" + req.body.avaliaco_comentario +
+        "' where id_livro =  " + req.params.id;
     console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();
@@ -94,12 +152,31 @@ router.put('/:id', function (req, res, next) {
 
 //REMOVER COMENTARIO
 
+//Remover Comentario De Lista
 router.delete('/:id', function (req, res, next) {
 	canal.connect(function(erro, conexao, feito){
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-    var sql = 'delete from tb_comentario where id_comentario =  ' + req.params.id;
+    var sql = 'delete from tb_comentario where id_lista =  ' + req.params.id;
+    console.log(sql);
+		conexao.query(sql, function(erro, resultado){
+			feito();
+			if (erro){
+				return console.error('Erro na remoção dos dados', erro);
+			}
+			res.json(resultado.rows);
+		});
+	});
+})
+
+//Remover Comentario De Livro
+router.delete('/:id', function (req, res, next) {
+	canal.connect(function(erro, conexao, feito){
+		if (erro){
+			return console.error('erro ao conectar no banco', erro);
+		}
+    var sql = 'delete from tb_comentario where id_livro =  ' + req.params.id;
     console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();
