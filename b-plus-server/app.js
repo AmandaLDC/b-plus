@@ -8,8 +8,10 @@ app.use(bodyParser.json());
 
 var lista = require('./routes/lista');
 var review = require('./routes/review');
+var livro = require('./routes/livro');
 
 app.use('/lista', lista);
 app.use('/review', review);
+app.use('/livro', livro);
 
 app.listen(3000);

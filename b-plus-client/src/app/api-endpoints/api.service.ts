@@ -115,4 +115,14 @@ constructor(){ }
     let url = 'http://localhost:3000/lista/' + id;
     return url;
   }
+
+  insertBook(){
+    let url = 'http://localhost:3000/livro/';
+    return url;
+  }
+
+  getBookList(id){
+    let url = 'http://localhost:3000/livro/' + id;
+    return url;
+  }
 }

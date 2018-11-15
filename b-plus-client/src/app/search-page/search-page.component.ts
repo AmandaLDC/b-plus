@@ -20,6 +20,7 @@ export class SearchPageComponent implements OnInit {
       this.results = data;
     });
   }
+  
 
   onClick(str : string){
     this._searchService.save(str);

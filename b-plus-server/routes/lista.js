@@ -89,26 +89,6 @@ canal.connect(function(erro, conexao, feito){
 });
 })
 
-//INSERIR LIVROS NA LISTA
-router.post('/', function (req, res, next) {
-canal.connect(function(erro, conexao, feito){
-  if (erro){
-    return console.error('erro ao conectar no banco', erro);
-  }
-  var sql =
-	'insert into tb_lista_livro (id_lista, id_livro) values (\'' + req.body.id_lista + '\', \''+ req.body.id_livro + '\')';
-  console.log(sql);
-
-  conexao.query(sql, function(erro, resultado){
-    feito();
-    if (erro){
-      return console.error('Erro na inserção dos dados', erro);
-    }
-    res.json(resultado.rows);
-  });
-});
-})
-
 //ATUALIZAR LISTA
 
 router.put('/:id', function (req, res, next) {

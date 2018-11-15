@@ -19,9 +19,11 @@ constructor(private _http: HttpClient){ }
 
 search(queryString: string) {
       queryString = queryString.replace(' ', '%');
+
       if(queryString == ""){
         return new EmptyObservable();
       }
+      
       let _URL = this.baseUrl + queryString;
       const options = {
         Headers: new HttpHeaders({

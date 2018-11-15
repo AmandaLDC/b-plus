@@ -2,6 +2,10 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../api-endpoints/api.service';
 import { ActivatedRoute, Route,Router } from '@angular/router';
+import { FormControl } from '@angular/forms';
+import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
+import { SearchService } from '../search/search.service';
+import 'rxjs/add/operator/distinctUntilChanged';
 
 @Component({
   selector: 'app-update-list',
@@ -13,6 +17,11 @@ export class UpdateListComponent implements OnInit {
     model: any = {};
     lista: any = {};
     id : any = 0;
+    removiveis: any;
+    book : any = {};
+    results: any = [];
+    suggestions: any = [];
+    queryField: FormControl = new FormControl();
     user: any = JSON.parse(localStorage.getItem('user'));
     options: any = {
                       Headers: new HttpHeaders({
@@ -28,10 +37,15 @@ export class UpdateListComponent implements OnInit {
         private rote: ActivatedRoute,
         private http: HttpClient,
         private router: Router,
-        private _apiService: ApiService) {}
+        private _apiService: ApiService,
+        private _searchService: SearchService) {}
 
     ngOnInit() {
       this.id = this.rote.snapshot.params['id'];
+      this.queryField.valueChanges
+      .distinctUntilChanged()
+      .subscribe(queryField => this._searchService.search(queryField)
+      .subscribe(response => this.results = response));
     }
 
     onSubmit() {
@@ -51,4 +65,34 @@ export class UpdateListComponent implements OnInit {
         console.log(erro);
       });
     }
+
+    onClickInsert(i){
+      this.book = {
+        id_lista: this.id,
+        id_livro: this.results[i].id_material
+      };
+      let endpoint = this._apiService.insertBook();
+      console.log(endpoint);
+      this.http.post(endpoint, this.book, this.options)
+      .subscribe(resposta => {
+        console.log('Inserido com sucesso');
+        this.getBooks(this.book.id_lista);
+      }, (erro) => {
+        console.log(erro);
+      });
+    }
+
+    getBooks(id){
+      let endpoint = this._apiService.getBookList(id);
+      this.http.get(endpoint, this.options).subscribe(data => {
+        this.removiveis;
+        console.log(removiveis);
+      });
+
+    }
+
+    onClickRemove(){
+
+    }
+
   }
