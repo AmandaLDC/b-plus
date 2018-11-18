@@ -31,16 +31,14 @@
           </div>
 
 
-
-          <div class="form-label-group">
-            <label class="label-login">Comentário</label>
-            <textarea type="text" class="form-control" name="id" [(ngModel)]="model.comentario" placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
-          </div>
-          <button (onclick)="onSubmit()">
-            Avaliar/Comentar
-          </button>
+          <form class="form-signin" (ngSubmit)="onSubmit()">
+            <div class="form-label-group">
+              <label class="label-login">Comentário</label>
+              <textarea type="text" class="form-control" name="id" [(ngModel)]="model.comentario"  #comentario="ngModel"placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
+            </div>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Avaliar/Comentar</button>
+          </form>
         </div>
-
       </div>
     </div>
   </div>

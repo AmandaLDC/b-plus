@@ -40,8 +40,7 @@ export class BookInfoComponent implements OnInit {
     private _apiService: ApiService,
     private _searchService: SearchService,
     private http: HttpClient,
-    private router: Router
-    ) { }
+    private router: Router) { }
 
   ngOnInit() {
     const livro_endpoint = this._searchService.getdataforid_material();
@@ -75,21 +74,23 @@ export class BookInfoComponent implements OnInit {
     } else {
       v = data[0].volume_exemplar;
     }
-    let autor;
+    // @ts-ignore
+    const autor;
     const assuntos = [];
 
 
     this.results = {
-      titulo : t,
-      tipo : tipo,
-      autor : autor,
-      volume : v,
-      edicao : ne,
-      ano : ano,
-      editora : ed,
-      assuntos : assuntos,
-      n_disponivel : nd,
-      n_total : nt
+      titulo: t,
+      exemplar: ex,
+      tipo: tipo,
+      autor: autor,
+      volume: v,
+      edicao: ne,
+      ano: ano,
+      editora: ed,
+      assuntos: assuntos,
+      n_disponivel: nd,
+      n_total: nt
     };
 
     this.http.get(autor_endpoint, this.options).subscribe(response => {
@@ -146,13 +147,13 @@ export class BookInfoComponent implements OnInit {
     this.review = {
       id_usuario: this.user.id_aluno,
       conteudo_comentario: this.model.comentario,
+      id_livro: this.results.ex,
       data_criacao: dn,
     };
     const endpoint = this._apiService.postReview();
     this.http.post(endpoint, this.review, this.options)
       .subscribe(resposta => {
         console.log('Inserido com sucesso');
-        this.router.navigate(['/book-info']);
       }, (erro) => {
         console.log(erro);
       });
