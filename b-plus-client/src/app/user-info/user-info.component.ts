@@ -10,14 +10,14 @@ import { ApiService } from '../api-endpoints/api.service';
 })
 export class UserInfoComponent implements OnInit {
 
-  results : any;
-  user : any = JSON.parse(localStorage.getItem("user"));
-  options : any = {
+  results: any;
+  user: any = JSON.parse(localStorage.getItem('user'));
+  options: any = {
                     Headers: new HttpHeaders({
                       'Content-Type': 'application/json',
-                      "Access-Control-Allow-Origin" : '*',
-                      "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-                      "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+                      'Access-Control-Allow-Origin' : '*',
+                      'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+                      'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
                     }),
                     withCredentials: false
                   };
@@ -35,7 +35,7 @@ export class UserInfoComponent implements OnInit {
     });
   }
 
-  logOut(){
+  logOut() {
     localStorage.clear();
     this.router.navigate(['/login-page']);
   }

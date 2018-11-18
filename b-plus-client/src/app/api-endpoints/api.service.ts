@@ -13,22 +13,22 @@ constructor(){ }
 
 //ENDPOINTS THAT CALL STUDENT USER DATA
 
-  getLogin(id){
+  getLogin(id) {
     let url = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + id;
     return url;
   }
 
-  getAluno(){
+  getAluno() {
     let url = 'http://dev2.unifacef.com.br:8000/api/matriculadoGrad/' + this.user.id_aluno;
     return url;
   }
 
-  getDisciplinaAluno(){
+  getDisciplinaAluno() {
     let url = 'http://dev2.unifacef.com.br:8000/api/inscricoesDisciplinaGrad/id_aluno' + this.user.id_aluno;
     return url;
   }
 
-  getEmprestimoAluno(){
+  getEmprestimoAluno() {
     let url = 'http://dev2.unifacef.com.br:8000/api/emprestimoAluno/' + this.user.id_aluno;
     return url;
   }
@@ -36,55 +36,55 @@ constructor(){ }
 
 //ENDPOINTS THAT CALL STAFF USER DATA
 
-  getDocente(){
+  getDocente() {
     let url = 'http://dev2.unifacef.com.br:8000/api/docente/' + this.user.id_docente;
     return url;
   }
 
-  getDisciplinaDocente(){
+  getDisciplinaDocente() {
     let url = 'http://dev2.unifacef.com.br:8000/api/disciplinaDocente/' + this.user.id_docente;
     return url;
   }
 
-  getEmprestimoDocente(){
+  getEmprestimoDocente() {
     let url = 'http://dev2.unifacef.com.br:8000/api/emprestimoAluno/' + this.user.id_docente;
     return url;
   }
 
   //ENDPOINTS THAT CALL DISCIPLINES DATA
 
-  getDisciplina(){
+  getDisciplina() {
     let url = 'http://dev2.unifacef.com.br:8000/api/disciplinaGrad/' //+ this.disciplina.id_disciplina_serie;
     return url;
   }
 
   //ENDPOINTS THAT CALL FOR BOOK DATA
 
-  getLivros(){
+  getLivros() {
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplar';
     return url;
   }
 
-  getLivroByIdExemplar(){
+  getLivroByIdExemplar() {
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplar/' + this.book.id_exemplar;
     return url;
   }
 
-  getLivroByIdMaterial(){
+  getLivroByIdMaterial() {
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplarMaterial' + this.book.id_material;
     return url;
   }
 
-  getLivroByTitulo(){
+  getLivroByTitulo() {
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplarTitulo/' + this.book.titulo_material;
     return url;
   }
-  getAssuntoByIdExemplar(){
+  getAssuntoByIdExemplar() {
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplarAssunto/' + this.book.id_exemplar;
     return url;
   }
 
-  getAutorByIdExemplar(){
+  getAutorByIdExemplar() {
     let url = 'http://dev2.unifacef.com.br:8000/api/exemplarAutor/' + this.book.id_exemplar;
     return url;
   }
@@ -96,32 +96,37 @@ constructor(){ }
 //    return url;
 //  }
 
-  getListByUserId(id){
+  getListByUserId(id) {
     let url = 'http://localhost:3000/lista/user/' + id;
     return url;
   }
 
-  postList(){
+  postList() {
     let url = 'http://localhost:3000/lista/'
     return url;
   }
 
-  listId(){
+  postReview() {
+    let url = 'http://localhost:3000/review/'
+    return url;
+  }
+
+  listId() {
     let url = 'http://localhost:3000/lista/' + this.list.id_lista;
     return url;
   }
 
-  removeList(id){
+  removeList(id) {
     let url = 'http://localhost:3000/lista/' + id;
     return url;
   }
 
-  insertBook(){
+  insertBook() {
     let url = 'http://localhost:3000/livro/';
     return url;
   }
 
-  getBookList(id){
+  getBookList(id) {
     let url = 'http://localhost:3000/livro/' + id;
     return url;
   }

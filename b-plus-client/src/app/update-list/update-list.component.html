@@ -51,7 +51,7 @@
           <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Salvar</button>
         </form>
         Livros:
-        <input  class="search-bar-container" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
+        <input class="search-bar-container" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
         <ul>
             <li *ngFor="let results of results ? results.slice(0,60): []; let i = index">
               <div *ngIf="results.numero_exemplar == 1">

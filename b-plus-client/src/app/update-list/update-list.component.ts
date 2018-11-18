@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { ApiService } from '../api-endpoints/api.service';
-import { ActivatedRoute, Route,Router } from '@angular/router';
+import { ActivatedRoute, Route, Router } from '@angular/router';
 import { FormControl } from '@angular/forms';
 import { EmptyObservable } from 'rxjs/observable/EmptyObservable';
 import { SearchService } from '../search/search.service';
@@ -16,9 +16,9 @@ export class UpdateListComponent implements OnInit {
 
     model: any = {};
     lista: any = {};
-    id : any = 0;
+    id: any = 0;
     removiveis: any;
-    book : any = {};
+    book: any = {};
     results: any = [];
     suggestions: any = [];
     queryField: FormControl = new FormControl();
@@ -53,8 +53,8 @@ export class UpdateListComponent implements OnInit {
         nome_lista: this.model.nome,
         categoria_lista: this.model.categoria,
         situacao_lista: this.model.situacao
-      }
-      let endpoint = this._apiService.removeList(this.id);
+      };
+      const endpoint = this._apiService.removeList(this.id);
       console.log(endpoint);
       console.log(this.lista);
       this.http.put(endpoint, this.lista, this.options)
@@ -66,12 +66,12 @@ export class UpdateListComponent implements OnInit {
       });
     }
 
-    onClickInsert(i){
+    onClickInsert(i) {
       this.book = {
         id_lista: this.id,
         id_livro: this.results[i].id_material
       };
-      let endpoint = this._apiService.insertBook();
+      const endpoint = this._apiService.insertBook();
       console.log(endpoint);
       this.http.post(endpoint, this.book, this.options)
       .subscribe(resposta => {
@@ -82,17 +82,16 @@ export class UpdateListComponent implements OnInit {
       });
     }
 
-    getBooks(id){
-      let endpoint = this._apiService.getBookList(id);
+    getBooks(id) {
+      const endpoint = this._apiService.getBookList(id);
       this.http.get(endpoint, this.options).subscribe(data => {
         this.removiveis;
-        console.log(removiveis);
+        console.log(this.removiveis);
       });
 
     }
 
-    onClickRemove(){
-
+    onClickRemove() {
     }
 
   }

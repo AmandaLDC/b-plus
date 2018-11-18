@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { SearchService } from '../search/search.service';
 import { Router } from '@angular/router';
+import { ApiService } from '../api-endpoints/api.service';
 
 @Component({
   selector: 'app-book-info',
@@ -10,6 +11,7 @@ import { Router } from '@angular/router';
 })
 export class BookInfoComponent implements OnInit {
 
+  model: any = {};
   results: any = {
                   titulo : '',
                   tipo : '',
@@ -22,21 +24,24 @@ export class BookInfoComponent implements OnInit {
                   n_disponivel : 0,
                   n_total : 0
                 };
-
-    options: any = {
-                      Headers: new HttpHeaders({
-                        'Content-Type': 'application/json',
-                        'Access-Control-Allow-Origin' : '*',
-                        'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-                        'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
-                      }),
-                      withCredentials: false
-                    };
+  review: any = {};
+  user: any = JSON.parse(localStorage.getItem('user'));
+  options: any = {
+                    Headers: new HttpHeaders({
+                      'Content-Type': 'application/json',
+                      'Access-Control-Allow-Origin' : '*',
+                      'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+                      'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
+                    }),
+                    withCredentials: false
+                  };
 
   constructor(
+    private _apiService: ApiService,
     private _searchService: SearchService,
     private http: HttpClient,
-    private router: Router) { }
+    private router: Router
+    ) { }
 
   ngOnInit() {
     const livro_endpoint = this._searchService.getdataforid_material();
@@ -127,4 +132,29 @@ export class BookInfoComponent implements OnInit {
     this.router.navigate(['/create-review']);
   }
 
+  getDate() {
+    const today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth() + 1;
+    const yyyy = today.getFullYear();
+    const dn = dd + '/' + mm + '/' + yyyy;
+    return dn;
+  }
+
+  onSubmit() {
+    const dn = this.getDate();
+    this.review = {
+      id_usuario: this.user.id_aluno,
+      conteudo_comentario: this.model.comentario,
+      data_criacao: dn,
+    };
+    const endpoint = this._apiService.postReview();
+    this.http.post(endpoint, this.review, this.options)
+      .subscribe(resposta => {
+        console.log('Inserido com sucesso');
+        this.router.navigate(['/book-info']);
+      }, (erro) => {
+        console.log(erro);
+      });
+  }
 }

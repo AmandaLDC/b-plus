@@ -11,16 +11,16 @@ import { Router } from '@angular/router';
 export class HomePageComponent implements OnInit {
 
   lista: any;
-  user : any = JSON.parse(localStorage.getItem("user"));
-  options : any = {
+  user: any = JSON.parse(localStorage.getItem('user'));
+  options: any = {
                     Headers: new HttpHeaders({
                       'Content-Type': 'application/json',
-                      "Access-Control-Allow-Origin" : '*',
-                      "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-                      "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+                      'Access-Control-Allow-Origin' : '*',
+                      'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+                      'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
                     }),
                     withCredentials: false
-                  }
+                  };
 
   constructor(
       private http: HttpClient,
@@ -28,64 +28,64 @@ export class HomePageComponent implements OnInit {
       private _apiService: ApiService) {}
 
   ngOnInit() {
-    if(this.user == null){
+    if (this.user == null) {
       this.router.navigate(['/home-page']);
     } else {
-      let endpoint = this._apiService.getListByUserId(this.user.id_aluno);
+      const endpoint = this._apiService.getListByUserId(this.user.id_aluno);
       this.http.get(endpoint, this.options).subscribe(data => {
         this.pageInit(data);
-      })
+      });
     }
   }
 
-  getDate(){
-    let today = new Date();
-    let dd = today.getDate();
+  getDate() {
+    const today = new Date();
+    const dd = today.getDate();
     console.log(dd);
-    let mm = today.getMonth()+1;
+    const mm = today.getMonth() + 1;
     console.log(mm);
-    let yyyy = today.getFullYear();
-    let dn = dd + '/' + mm + '/' + yyyy;
+    const yyyy = today.getFullYear();
+    const dn = dd + '/' + mm + '/' + yyyy;
     return dn;
   }
 
-  pageInit(data){
+  pageInit(data) {
     this.lista = data;
     const endpoint = this._apiService.postList();
-    if(this.lista == 0){
-      let dn = this.getDate();
-      let lista_notification = {
-        nome_lista: "Notificações",
+    if (this.lista === 0) {
+      const dn = this.getDate();
+      const lista_notification = {
+        nome_lista: 'Notificações',
         id_usuario: this.user.id_aluno,
-        categoria_lista: "Notificações",
-        situacao_lista: "PES",
-        tipo_lista: "NOT",
+        categoria_lista: 'Notificações',
+        situacao_lista: 'PES',
+        tipo_lista: 'NOT',
         data_criacao: dn
-      }
+      };
 
-      let lista_favoritos = {
-        nome_lista: "Favoritos",
+      const lista_favoritos = {
+        nome_lista: 'Favoritos',
         id_usuario: this.user.id_aluno,
-        categoria_lista: "Favoritos",
-        situacao_lista: "PES",
-        tipo_lista: "FAV",
+        categoria_lista: 'Favoritos',
+        situacao_lista: 'PES',
+        tipo_lista: 'FAV',
         data_criacao: dn
-      }
+      };
 
       this.http.post(endpoint, lista_notification, this.options)
       .subscribe(resposta => {
-          console.log("Inserido com sucesso");
+          console.log('Inserido com sucesso');
       }, (erro) => {
         console.log(erro);
       });
 
       this.http.post(endpoint, lista_favoritos, this.options)
       .subscribe(resposta => {
-          console.log("Inserido com sucesso");
+          console.log('Inserido com sucesso');
       }, (erro) => {
         console.log(erro);
       });
-      let getendpoint = this._apiService.getListByUserId(this.user.id_aluno);
+      const getendpoint = this._apiService.getListByUserId(this.user.id_aluno);
       this.http.get(endpoint, this.options).subscribe(data => {
         this.lista = data;
       });
@@ -93,23 +93,23 @@ export class HomePageComponent implements OnInit {
     }
   }
 
-  expandList(i){
-    localStorage.setItem("list", JSON.stringify(this.lista[i]));
+  expandList(i) {
+    localStorage.setItem('list', JSON.stringify(this.lista[i]));
     this.router.navigate(['/expand-list']);
   }
 
-  editList(i){
+  editList(i) {
     this.router.navigate(['/update-list', this.lista[i].id_lista]);
   }
 
-  createList(){
+  createList() {
     this.router.navigate(['/create-list']);
   }
 
-  removeList(i){
+  removeList(i) {
     const endpoint = this._apiService.removeList(this.lista[i].id_lista);
     this.http.delete(endpoint, this.options).subscribe(resposta => {
-        console.log("Deletada com sucesso");
+        console.log('Deletada com sucesso');
         this.ngOnInit();
     }, (erro) => {
       console.log(erro);

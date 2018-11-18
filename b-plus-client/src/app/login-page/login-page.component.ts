@@ -13,7 +13,7 @@ export class LoginPageComponent implements OnInit {
 
   user: any = {};
   model: any = {};
-  session : any = JSON.parse(localStorage.getItem("user"));
+  session: any = JSON.parse(localStorage.getItem('user'));
 
   constructor(
       private http: HttpClient,
@@ -21,7 +21,7 @@ export class LoginPageComponent implements OnInit {
       private _apiService: ApiService) {}
 
   ngOnInit() {
-    if(this.session){
+    if (this.session) {
       this.router.navigate(['/home-page']);
     }
   }
@@ -34,19 +34,19 @@ export class LoginPageComponent implements OnInit {
       const options = {
         Headers: new HttpHeaders({
           'Content-Type': 'application/json',
-          "Access-Control-Allow-Origin" : '*',
-          "Access-Control-Allow-Methods": 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
-          "Access-Control-Allow-Headers" : 'Origin, Content-Type, X-Auth-Token, content-type'
+          'Access-Control-Allow-Origin' : '*',
+          'Access-Control-Allow-Methods': 'GET,POST,PATCH,DELETE,PUT,OPTIONS',
+          'Access-Control-Allow-Headers' : 'Origin, Content-Type, X-Auth-Token, content-type'
         }),
         withCredentials: false
-      }
+      };
       this.http.get(endpoint, options).subscribe(data => this.pageInit(data));
   }
 
-  pageInit(data){
+  pageInit(data) {
     this.user = data[0];
-    localStorage.setItem("user", JSON.stringify(this.user));
-    const  pw = this.user.cpf.split('.');
+    localStorage.setItem('user', JSON.stringify(this.user));
+    const pw = this.user.cpf.split('.');
     let senha = [];
     senha = pw[0] + pw[1];
     if (senha === this.model.password) {

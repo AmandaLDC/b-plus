@@ -33,10 +33,10 @@ export class ExpandListComponent implements OnInit {
   pageInit(data) {
   }
 
-  removeList(i){
+  removeList(i) {
     const endpoint = this._apiService.removeList(this.lista.id_lista);
     this.http.delete(endpoint, this.options).subscribe(resposta => {
-        console.log("Deletada com sucesso");
+        console.log('Deletada com sucesso');
         this.router.navigate(['/home-page']);
     }, (erro) => {
       console.log(erro);
@@ -47,7 +47,7 @@ export class ExpandListComponent implements OnInit {
     this.router.navigate(['/create-review']);
   }
 
-  updateList(){
+  updateList() {
     this.router.navigate(['/update-list', this.lista.id_lista]);
   }
 

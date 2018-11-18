@@ -34,9 +34,9 @@
 
           <div class="form-label-group">
             <label class="label-login">Comentário</label>
-            <textarea type="text" class="form-control" name="id" placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
+            <textarea type="text" class="form-control" name="id" [(ngModel)]="model.comentario" placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
           </div>
-          <button>
+          <button (onclick)="onSubmit()">
             Avaliar/Comentar
           </button>
         </div>

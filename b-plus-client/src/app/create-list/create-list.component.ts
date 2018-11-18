@@ -31,26 +31,26 @@ export class CreateListComponent implements OnInit {
   ngOnInit() {
   }
 
-  getDate(){
-    let today = new Date();
-    let dd = today.getDate();
-    let mm = today.getMonth()+1;
-    let yyyy = today.getFullYear();
-    let dn = dd + '/' + mm + '/' + yyyy;
+  getDate() {
+    const today = new Date();
+    const dd = today.getDate();
+    const mm = today.getMonth() + 1;
+    const yyyy = today.getFullYear();
+    const dn = dd + '/' + mm + '/' + yyyy;
     return dn;
   }
 
   onSubmit() {
-    let dn = this.getDate();
+    const dn = this.getDate();
     this.lista = {
       nome_lista: this.model.nome,
       id_usuario: this.user.id_aluno,
       categoria_lista: this.model.categoria,
       situacao_lista: this.model.situacao,
-      tipo_lista: "NOR",
+      tipo_lista: 'NOR',
       data_criacao: dn
-    }
-    let endpoint = this._apiService.postList();
+    };
+    const endpoint = this._apiService.postList();
     this.http.post(endpoint, this.lista, this.options)
     .subscribe(resposta => {
       console.log('Inserido com sucesso');
@@ -60,3 +60,4 @@ export class CreateListComponent implements OnInit {
     });
   }
 }
+
