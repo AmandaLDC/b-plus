@@ -39,6 +39,15 @@
             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Avaliar/Comentar</button>
           </form>
         </div>
+
+        <div class="container global-div" *ngFor="let lista of lista; let i = index">
+          <div class="row">
+            <div class="col-md-12">
+              {{this.review.conteudo_comentario}}
+            </div>
+          </div>
+        </div>
+
       </div>
     </div>
   </div>
