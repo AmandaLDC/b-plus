@@ -147,7 +147,8 @@ export class BookInfoComponent implements OnInit {
     this.review = {
       id_usuario: this.user.id_aluno,
       conteudo_comentario: this.model.comentario,
-      id_livro: this.results.ex,
+      id_livro: this.results.exemplar,
+      id_lista: null,
       data_criacao: dn,
     };
     const endpoint = this._apiService.postReview();
