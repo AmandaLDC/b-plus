@@ -128,10 +128,6 @@ export class BookInfoComponent implements OnInit {
     return r;
   }
 
-  newReview() {
-    this.router.navigate(['/create-review']);
-  }
-
   getDate() {
     const today = new Date();
     const dd = today.getDate();

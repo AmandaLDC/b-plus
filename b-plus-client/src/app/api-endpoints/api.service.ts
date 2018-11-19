@@ -116,6 +116,16 @@ constructor(){ }
     return url;
   }
 
+  postReviewList() {
+    let url = 'http://localhost:3000/review/lista/'
+    return url;
+  }
+
+  reviewList(id) {
+    let url = 'http://localhost:3000/review/lista/' + id;
+    return url;
+  }
+
   listId() {
     let url = 'http://localhost:3000/lista/' + this.list.id_lista;
     return url;
