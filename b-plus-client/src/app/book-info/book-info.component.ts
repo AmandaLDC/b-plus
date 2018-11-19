@@ -173,8 +173,8 @@ export class BookInfoComponent implements OnInit {
         console.log(erro);
       })
   }
-  removeComments(data){
-    const endpoint = this._apiService.reviewBook(data[0].id_exemplar);
+  removeComments(i){
+    const endpoint = this._apiService.reviewBook(this.comment[i].id_comentario);
     this.http.delete(endpoint, this.options)
       .subscribe(resposta => {
         console.log('Removido com sucesso');

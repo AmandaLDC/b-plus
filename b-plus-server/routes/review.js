@@ -212,7 +212,7 @@ router.delete('/lista/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-        const sql = 'delete from tb_comentario_lista where id_lista =  ' + req.params.id;
+        const sql = 'delete from tb_comentario_lista where id_comentario =  ' + req.params.id;
         console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();
@@ -230,7 +230,7 @@ router.delete('/livro/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-        const sql = 'delete from tb_comentario_livro where id_livro =  ' + req.params.id;
+        const sql = 'delete from tb_comentario_livro where id_comentario =  ' + req.params.id;
         console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();
