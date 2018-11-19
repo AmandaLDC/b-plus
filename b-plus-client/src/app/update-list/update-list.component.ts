@@ -88,7 +88,6 @@ export class UpdateListComponent implements OnInit {
       const endpoint = this._apiService.getBookList(id);
       this.http.get(endpoint, this.options).subscribe(data => {
         this.removiveis = data;
-        this.refreshPage();
       });
 
     }
