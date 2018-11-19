@@ -34,16 +34,41 @@
           <form class="form-signin" (ngSubmit)="onSubmit()">
             <div class="form-label-group">
               <label class="label-login">Comentário</label>
+
+              <div class="form-label-group">
+                <label class="label-login">Nota</label>
+                <label class="customradio"><span class="radiotextsty">1</span>
+                  <input type="radio" name="nota" [(ngModel)]="model.nota" #nota="ngModel" value=1>
+                  <span class="checkmark"></span>
+                </label>
+                <label class="customradio"><span class="radiotextsty">2</span>
+                  <input type="radio" name="nota" [(ngModel)]="model.nota" #nota="ngModel" value=2>
+                  <span class="checkmark"></span>
+                </label>
+                <label class="customradio"><span class="radiotextsty">3</span>
+                  <input type="radio" name="nota" [(ngModel)]="model.nota" #nota="ngModel" value=3>
+                  <span class="checkmark"></span>
+                </label>
+                <label class="customradio"><span class="radiotextsty">4</span>
+                  <input type="radio" name="nota" [(ngModel)]="model.nota" #nota="ngModel" value=4>
+                  <span class="checkmark"></span>
+                </label>
+                <label class="customradio"><span class="radiotextsty">5</span>
+                  <input type="radio" name="nota" [(ngModel)]="model.nota" #nota="ngModel" value=5>
+                  <span class="checkmark"></span>
+                </label>
+              </div>
+
               <textarea type="text" class="form-control" name="id" [(ngModel)]="model.comentario"  #comentario="ngModel"placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
             </div>
             <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Avaliar/Comentar</button>
           </form>
         </div>
 
-        <div class="container global-div" *ngFor="let review of review; let i = index">
+        <div class="container global-div" *ngFor="let comment of comment; let i = index">
           <div class="row">
             <div class="col-md-12">
-              {{this.review.conteudo_comentario}}
+              {{this.comment.conteudo_comentario}}
             </div>
           </div>
         </div>

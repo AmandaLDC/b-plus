@@ -24,7 +24,8 @@ export class BookInfoComponent implements OnInit {
                   n_disponivel : 0,
                   n_total : 0
                 };
-  review: any = {};
+  review: any = [];
+  comment: any [];
   user: any = JSON.parse(localStorage.getItem('user'));
   options: any = {
                     Headers: new HttpHeaders({
@@ -50,7 +51,7 @@ export class BookInfoComponent implements OnInit {
         this.pageInit(data);
       });
     } else {
-      JSON.parse(localStorage.getItem('book'));
+        this.results = JSON.parse(localStorage.getItem('book'));
     }
   }
 
@@ -74,11 +75,8 @@ export class BookInfoComponent implements OnInit {
     } else {
       v = data[0].volume_exemplar;
     }
-    // @ts-ignore
     const autor;
     const assuntos = [];
-
-
     this.results = {
       titulo: t,
       exemplar: ex,
@@ -144,19 +142,23 @@ export class BookInfoComponent implements OnInit {
 
   onSubmit() {
     const dn = this.getDate();
+    const livro_endpoint = this._searchService.getdataforid_material();
+    this.http.get(livro_endpoint, this.options).subscribe(data => {
     this.review = {
       id_usuario: this.user.id_aluno,
       conteudo_comentario: this.model.comentario,
-      id_livro: this.results.exemplar,
-      id_lista: null,
+      avaliaco_comentario: this.model.nota,
+      id_livro: data[0].id_exemplar,
       data_criacao: dn,
-    };
-    const endpoint = this._apiService.postReview();
+    }
+    const endpoint = this._apiService.postReviewBook();
     this.http.post(endpoint, this.review, this.options)
       .subscribe(resposta => {
         console.log('Inserido com sucesso');
+        this.ngOnInit();
       }, (erro) => {
         console.log(erro);
-      });
-  }
+      })
+  });
+}
 }

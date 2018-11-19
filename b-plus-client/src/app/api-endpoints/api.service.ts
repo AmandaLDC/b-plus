@@ -106,8 +106,8 @@ constructor(){ }
     return url;
   }
 
-  postReview() {
-    let url = 'http://localhost:3000/review/'
+  postReviewBook() {
+    let url = 'http://localhost:3000/review/livro/'
     return url;
   }
 
