@@ -114,7 +114,6 @@ export class HomePageComponent implements OnInit {
     }, (erro) => {
       console.log(erro);
     });
-
   }
 
 }

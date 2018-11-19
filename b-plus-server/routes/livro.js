@@ -5,7 +5,7 @@ const pg = require('pg');
 const config = {
     user: "postgres",
     database: "tic",
-    password: "facefbd",
+    password: "Khaleesi2603",
     port: 5432,
     max: 10,
     idleTimeoutMills: 30000,
@@ -16,7 +16,7 @@ const canal = new pg.Pool(config);
 
 //Consulta Os Livros Por Id_Lista
 
-//Consulta As Listas Por Id_Lista
+//Consulta As Livros Por Id_Lista
 router.get('/:id', function (req, res, next) {
     canal.connect(function(erro, conexao, feito){
       if (erro){
@@ -29,7 +29,7 @@ router.get('/:id', function (req, res, next) {
             if (erro){
               return console.error('Erro na consulta da tabela', erro);
             }
-            res.json(resultado.rows[0]);
+            res.json(resultado.rows);
         });
     });
 });
@@ -58,12 +58,12 @@ router.post('/', function (req, res, next) {
 //REMOVER LIVRO
 
 //Remover Os Livros Por Id_Lista
-router.delete('/:id', function (req, res, next) {
+router.delete('/remove/:lista/:livro', function (req, res, next) {
 	canal.connect(function(erro, conexao, feito){
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-        const sql = 'delete from tb_lista_livro where id_lista =  ' + req.params.id;
+        const sql = 'delete from tb_lista_livro where id_lista =  ' + req.params.lista + 'and id_livro =' + req.params.livro;
         console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();

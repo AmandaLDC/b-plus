@@ -11,6 +11,7 @@ import { Router } from '@angular/router';
 export class ExpandListComponent implements OnInit {
 
   lista: any = JSON.parse(localStorage.getItem('list'));
+  results: any = [];
   user: any = JSON.parse(localStorage.getItem('user'));
   options: any = {
                     Headers: new HttpHeaders({
@@ -28,9 +29,13 @@ export class ExpandListComponent implements OnInit {
       private _apiService: ApiService) {}
 
   ngOnInit() {
-  }
-
-  pageInit(data) {
+    const endpoint = this._apiService.getBookList(this.lista.id_lista);
+    this.http.get(endpoint, this.options).subscribe(resposta => {
+        this.results = resposta;
+        console.log(resposta);
+    }, (erro) => {
+      console.log(erro);
+    });
   }
 
   removeList(i) {

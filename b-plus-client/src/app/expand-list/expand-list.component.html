@@ -1,6 +1,6 @@
 <body class="main">
   <p class="main-title">
-    Nova Lista
+    Lista {{this.lista.nome_lista}}
   </p>
   <div class="container global-div">
     <div class="row">
@@ -12,8 +12,9 @@
         Criado Por:
         {{this.user.sobrenome_aluno}}<br>
         Livros:
-        {{this.lista}}<br>
-
+        <p *ngFor="let results of results; let i = index">
+          {{this.results.id_livro}}
+        </p>
         Comentários
         <!-- Inserir divisória aqui -->
         Foto do Usuário

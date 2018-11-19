@@ -50,17 +50,26 @@
 
           <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Salvar</button>
         </form>
-        Livros:
+        Insira Livros:
         <input class="search-bar-container" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
         <ul>
             <li *ngFor="let results of results ? results.slice(0,60): []; let i = index">
               <div *ngIf="results.numero_exemplar == 1">
                 <button (click)="onClickInsert(i)">
-                  {{results.titulo_material}}
-                  <p *ngIf="results.volume_exemplar != 0" style="display:inline"> {{results.volume_exemplar}} </p>
-                  {{results.edicao_ano}}
+                  {{this.results.titulo_material}}
+                  <p *ngIf="results.volume_exemplar != 0" style="display:inline"> {{this.results.volume_exemplar}} </p>
+                  {{this.results.edicao_ano}}
                 </button>
               </div>
+            </li>
+        </ul>
+
+        Remova Livros:
+        <ul>
+            <li *ngFor="let removiveis of removiveis ? removiveis.slice(0,60): []; let i = index">
+                <button (click)="onClickRemove(i)">
+                  <p> {{this.removiveis.id_livro}} </p>
+                </button>
             </li>
         </ul>
       </div>

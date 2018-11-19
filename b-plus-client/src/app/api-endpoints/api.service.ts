@@ -130,4 +130,10 @@ constructor(){ }
     let url = 'http://localhost:3000/livro/' + id;
     return url;
   }
+
+  removeBook(lista, livro){
+    let url = 'http://localhost:3000/livro/remove/' + lista +'/'+ livro;
+    return url;
+  }
+
 }
