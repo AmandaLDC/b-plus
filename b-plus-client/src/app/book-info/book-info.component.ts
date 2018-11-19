@@ -25,7 +25,7 @@ export class BookInfoComponent implements OnInit {
                   n_total : 0
                 };
   review: any = [];
-  comment: any [];
+  comment: any = [];
   user: any = JSON.parse(localStorage.getItem('user'));
   options: any = {
                     Headers: new HttpHeaders({
@@ -44,11 +44,12 @@ export class BookInfoComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    const livro_endpoint = this._searchService.getdataforid_material();
+    let livro_endpoint = this._searchService.getdataforid_material();
 
     if (livro_endpoint !== '0') {
       this.http.get(livro_endpoint, this.options).subscribe(data => {
         this.pageInit(data);
+        this.getComments(data);
       });
     } else {
         this.results = JSON.parse(localStorage.getItem('book'));
@@ -75,7 +76,7 @@ export class BookInfoComponent implements OnInit {
     } else {
       v = data[0].volume_exemplar;
     }
-    const autor;
+    let autor;
     const assuntos = [];
     this.results = {
       titulo: t,
@@ -142,8 +143,8 @@ export class BookInfoComponent implements OnInit {
 
   onSubmit() {
     const dn = this.getDate();
-    const livro_endpoint = this._searchService.getdataforid_material();
-    this.http.get(livro_endpoint, this.options).subscribe(data => {
+    const endpoint = this._searchService.getdataforid_material();
+    this.http.get(endpoint, this.options).subscribe(data => {
     this.review = {
       id_usuario: this.user.id_aluno,
       conteudo_comentario: this.model.comentario,
@@ -159,6 +160,27 @@ export class BookInfoComponent implements OnInit {
       }, (erro) => {
         console.log(erro);
       })
-  });
-}
+    });
+  }
+
+  getComments(data){
+    const endpoint = this._apiService.reviewBook(data[0].id_exemplar);
+    this.http.get(endpoint, this.options)
+      .subscribe(resposta => {
+        this.comment = resposta;
+        console.log(resposta);
+      }, (erro) => {
+        console.log(erro);
+      })
+  }
+  removeComments(data){
+    const endpoint = this._apiService.reviewBook(data[0].id_exemplar);
+    this.http.delete(endpoint, this.options)
+      .subscribe(resposta => {
+        console.log('Removido com sucesso');
+        this.ngOnInit();
+      }, (erro) => {
+        console.log(erro);
+      })
+  }
 }

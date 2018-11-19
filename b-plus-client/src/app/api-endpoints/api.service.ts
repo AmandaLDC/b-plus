@@ -111,6 +111,11 @@ constructor(){ }
     return url;
   }
 
+  reviewBook(id) {
+    let url = 'http://localhost:3000/review/livro/' + id;
+    return url;
+  }
+
   listId() {
     let url = 'http://localhost:3000/lista/' + this.list.id_lista;
     return url;

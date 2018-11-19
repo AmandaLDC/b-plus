@@ -68,7 +68,16 @@
         <div class="container global-div" *ngFor="let comment of comment; let i = index">
           <div class="row">
             <div class="col-md-12">
-              {{this.comment.conteudo_comentario}}
+              {{this.comment.id_usuario}}
+              <p>Nota:</p>
+              <p>{{this.comment.avaliaco_comentario}}</p>
+              Data:
+              {{this.comment.data_criacao}}
+              <p>Comentário:</p>
+              <p>{{this.comment.conteudo_comentario}}</p>
+              <div *ngIf="this.user?.id_aluno == this.comment.id_usuario">
+                <button (click)="removeComments(i)">Excluir</button>
+              </div>
             </div>
           </div>
         </div>

@@ -15,7 +15,7 @@ var canal = new pg.Pool(config);
 //CONSULTAR COMENTARIOS
 
 //Consulta Todos Os Comentarios de Livros
-router.get('/', function (req, res, next) {
+router.get('livro/', function (req, res, next) {
     canal.connect(function(erro, conexao, feito){
       if (erro){
         return console.error('erro ao conectar no banco', erro);
@@ -32,7 +32,7 @@ router.get('/', function (req, res, next) {
 });
 
 //Consulta Todos Os Comentarios de Listas
-router.get('/', function (req, res, next) {
+router.get('lista/', function (req, res, next) {
     canal.connect(function(erro, conexao, feito){
       if (erro){
         return console.error('erro ao conectar no banco', erro);
@@ -61,7 +61,7 @@ router.get('/lista/:id', function (req, res, next) {
         if (erro){
           return console.error('Erro na consulta da tabela', erro);
         }
-        res.json(resultado.rows[0]);
+        res.json(resultado.rows);
       });
     });
 });
@@ -79,7 +79,7 @@ router.get('/livro/:id', function (req, res, next) {
         if (erro){
           return console.error('Erro na consulta da tabela', erro);
         }
-        res.json(resultado.rows[0]);
+        res.json(resultado.rows);
       });
     });
 });
