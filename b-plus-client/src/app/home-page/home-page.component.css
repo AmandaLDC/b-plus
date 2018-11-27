@@ -1,3 +1,9 @@
+.name_list{
+  font-family: 'Open Sans', SansSerif;
+  font-size: 1.5em;
+  color: #1C155B;
+}
+
 .button_home-page{
     font-family: 'Open Sans', SansSerif;
     font-size: 1.4em;
@@ -5,3 +11,13 @@
     color: white;
     border-style: none;
 }
+
+.button_list{
+  color: #1C155B;
+  background-color: white;
+  border-style: none;
+  margin-left: 2%;
+  margin-right: 2%;
+  alignment: center;
+}
+

@@ -3,7 +3,21 @@
   <component name="ChangeListManager">
     <list default="true" id="d17f911a-8d84-4ac4-bf54-7be728f3582d" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-server/routes/lista.js" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-server/routes/lista.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-server/routes/livro.js" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-server/routes/livro.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/b-plus-server/routes/review.js" beforeDir="false" afterPath="$PROJECT_DIR$/b-plus-server/routes/review.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -14,102 +28,43 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="FUSProjectUsageTrigger">
-    <session id="2059381526">
-      <usages-collector id="statistics.lifecycle.project">
-        <counts>
-          <entry key="project.closed" value="2" />
-          <entry key="project.open.time.16" value="1" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.open.time.76" value="1" />
-          <entry key="project.opened" value="3" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.open">
-        <counts>
-          <entry key="css" value="4" />
-          <entry key="html" value="27" />
-          <entry key="js" value="17" />
-          <entry key="json" value="10" />
-          <entry key="ts" value="41" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.types.open">
-        <counts>
-          <entry key="CSS" value="4" />
-          <entry key="HTML" value="27" />
-          <entry key="JSON" value="10" />
-          <entry key="JavaScript" value="17" />
-          <entry key="TypeScript" value="41" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.js.language.service.starts">
-        <counts>
-          <entry key="Angular2LanguageService" value="3" />
-          <entry key="TsLintLanguageService" value="2" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.vcs.git.usages" />
-      <usages-collector id="statistics.file.types.edit">
-        <counts>
-          <entry key="HTML" value="432" />
-          <entry key="JavaScript" value="73" />
-          <entry key="PLAIN_TEXT" value="58" />
-          <entry key="TypeScript" value="390" />
-        </counts>
-      </usages-collector>
-      <usages-collector id="statistics.file.extensions.edit">
-        <counts>
-          <entry key="html" value="432" />
-          <entry key="js" value="73" />
-          <entry key="ts" value="390" />
-          <entry key="txt" value="58" />
-        </counts>
-      </usages-collector>
-    </session>
-  </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/header/header.component.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2516">
-              <caret line="148" column="43" lean-forward="true" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
+            <state relative-caret-position="102">
+              <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
               <folding>
-                <element signature="e#0#50#0" expanded="true" />
+                <element signature="n#style#0;n#p#2;n#div#1;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/header/header.component.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="392">
-              <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+            <state relative-caret-position="-731">
+              <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.css">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.html">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="153">
-              <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+              <caret line="9" column="39" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="39" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html">
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.ts">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="344">
-              <caret line="52" column="103" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="103" />
+            <state relative-caret-position="155">
+              <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
             </state>
           </provider>
         </entry>
@@ -127,46 +82,34 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.ts" />
-        <option value="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.ts" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.ts" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/update-list/update-list.component.ts" />
-        <option value="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.ts" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.ts" />
-        <option value="$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.ts" />
-        <option value="$PROJECT_DIR$/b-plus-server/routes/review.js" />
-        <option value="$PROJECT_DIR$/b-plus-server/routes/livro.js" />
-        <option value="$PROJECT_DIR$/b-plus-server/routes/lista.js" />
         <option value="$PROJECT_DIR$/b-plus-server/servidor.js" />
         <option value="$PROJECT_DIR$/b-plus-server/app.js" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/update-list/update-list.component.html" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.html" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/api-endpoints/api.service.ts" />
-        <option value="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts" />
-        <option value="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.html" />
         <option value="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts" />
+        <option value="$PROJECT_DIR$/b-plus-server/routes/lista.js" />
+        <option value="$PROJECT_DIR$/b-plus-server/routes/livro.js" />
+        <option value="$PROJECT_DIR$/b-plus-server/routes/review.js" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.css" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.css" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.css" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.ts" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.html" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/header/header.component.css" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.ts" />
+        <option value="$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.ts" />
       </list>
     </option>
-  </component>
-  <component name="JsBuildToolGruntFileManager" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsBuildToolPackageJson" detection-done="true" sorting="DEFINITION_ORDER" />
-  <component name="JsGulpfileManager">
-    <detection-done>true</detection-done>
-    <sorting>DEFINITION_ORDER</sorting>
-  </component>
-  <component name="NodeModulesDirectoryManager">
-    <handled-path value="$PROJECT_DIR$/b-plus-client/node_modules" />
-    <handled-path value="$PROJECT_DIR$/b-plus-server/node_modules" />
-  </component>
-  <component name="NodePackageJsonFileManager">
-    <packageJsonPaths>
-      <path value="$PROJECT_DIR$/b-plus-client/package.json" />
-      <path value="$PROJECT_DIR$/b-plus-client/src/assets/open-iconic-master/open-iconic-master/package.json" />
-      <path value="$PROJECT_DIR$/b-plus-client/src/assets/open-iconic-master/package.json" />
-      <path value="$PROJECT_DIR$/b-plus-server/package.json" />
-    </packageJsonPaths>
   </component>
   <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="55" />
@@ -210,7 +153,7 @@
               <item name="b-plus-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="book-info" type="462c0819:PsiDirectoryNode" />
+              <item name="header" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="b-plus" type="b2602c69:ProjectViewProjectNode" />
@@ -218,15 +161,7 @@
               <item name="b-plus-client" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="home-page" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="b-plus" type="b2602c69:ProjectViewProjectNode" />
-              <item name="b-plus" type="462c0819:PsiDirectoryNode" />
-              <item name="b-plus-client" type="462c0819:PsiDirectoryNode" />
-              <item name="src" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="update-list" type="462c0819:PsiDirectoryNode" />
+              <item name="login-page" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="b-plus" type="b2602c69:ProjectViewProjectNode" />
@@ -281,7 +216,11 @@
       <updated>1542045427211</updated>
       <workItem from="1542045432700" duration="7517000" />
       <workItem from="1542558879117" duration="67000" />
-      <workItem from="1542559101779" duration="8578000" />
+      <workItem from="1542559101779" duration="9267000" />
+      <workItem from="1542752825714" duration="657000" />
+      <workItem from="1542754155186" duration="235000" />
+      <workItem from="1543169821453" duration="649000" />
+      <workItem from="1543249483613" duration="8867000" />
     </task>
     <task id="LOCAL-00001" summary="12/11 - bugs fixed">
       <created>1542059541847</created>
@@ -318,17 +257,24 @@
       <option name="project" value="LOCAL" />
       <updated>1542566895715</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="18/11 - begin to edit css">
+      <created>1542572614728</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1542572614728</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="16162000" />
+    <option name="totallyTimeSpent" value="27259000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24330357" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -357,9 +303,6 @@
       </list>
     </option>
   </component>
-  <component name="VcsContentAnnotationSettings">
-    <option name="myLimit" value="2678400000" />
-  </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="12/11 - bugs fixed" />
     <MESSAGE value="12/11 - bugs fixed 2" />
@@ -381,38 +324,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/header/header.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="8" lean-forward="true" selection-start-line="13" selection-start-column="8" selection-end-line="13" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/header/header.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" column="48" lean-forward="true" selection-start-line="12" selection-start-column="48" selection-end-line="12" selection-end-column="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="19" column="8" lean-forward="true" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/update-review/update-review.component.html">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/update-review/update-review.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/update-review/update-review.component.ts">
       <provider selected="true" editor-type-id="text-editor">
@@ -425,20 +341,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="22" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.css">
       <provider selected="true" editor-type-id="text-editor" />
@@ -451,13 +354,7 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/footer/footer.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/footer/footer.component.html">
       <provider selected="true" editor-type-id="text-editor" />
@@ -465,37 +362,8 @@
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/help-page/help-page.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/help-page/help-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1019" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/landing-page/landing-page.component.ts">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="170">
-          <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="17" column="14" lean-forward="true" selection-start-line="17" selection-start-column="14" selection-end-line="17" selection-end-column="14" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-server/routes/livro.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="19" column="7" selection-start-line="19" selection-start-column="7" selection-end-line="19" selection-end-column="7" />
-        </state>
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-server/package.json">
       <provider selected="true" editor-type-id="text-editor" />
@@ -511,23 +379,7 @@
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.spec.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <folding>
-            <element signature="e#0#73#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="35" column="3" lean-forward="true" selection-start-line="35" selection-start-column="3" selection-end-line="35" selection-end-column="3" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/tslint.json">
       <provider selected="true" editor-type-id="text-editor" />
@@ -535,27 +387,10 @@
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.spec.ts">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-server/routes/lista.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-102">
-          <caret line="6" column="20" lean-forward="true" selection-start-line="6" selection-start-column="20" selection-end-line="6" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-server/routes/review.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" column="15" lean-forward="true" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/expand-list/expand-list.component.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="357">
           <caret line="21" column="30" selection-start-line="21" selection-start-column="30" selection-end-line="21" selection-end-column="30" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -563,20 +398,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="392">
           <caret line="129" column="50" selection-start-line="129" selection-start-column="50" selection-end-line="129" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-server/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="13" column="16" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/update-list/update-list.component.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="67" column="8" lean-forward="true" selection-start-line="67" selection-start-column="8" selection-end-line="67" selection-end-column="8" />
         </state>
       </provider>
     </entry>
@@ -608,43 +429,168 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="225">
           <caret line="51" column="6" lean-forward="true" selection-start-line="51" selection-start-column="6" selection-end-line="51" selection-end-column="6" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/create-list/create-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="344">
-          <caret line="52" column="103" lean-forward="true" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="103" />
+        <state relative-caret-position="884">
+          <caret line="52" column="103" selection-start-line="52" selection-start-column="10" selection-end-line="52" selection-end-column="103" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts">
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/update-list/update-list.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2516">
-          <caret line="148" column="43" lean-forward="true" selection-start-line="148" selection-start-column="43" selection-end-line="148" selection-end-column="43" />
-          <folding>
-            <element signature="e#0#50#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="650">
+          <caret line="72" column="17" lean-forward="true" selection-start-line="72" selection-start-column="17" selection-end-line="72" selection-end-column="17" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.css">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.html">
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state relative-caret-position="531">
+          <caret line="81" column="16" lean-forward="true" selection-start-line="81" selection-start-column="16" selection-end-line="81" selection-end-column="16" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.html">
+    <entry file="file://$PROJECT_DIR$/b-plus-server/routes/livro.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="392">
-          <caret line="44" column="35" lean-forward="true" selection-start-line="44" selection-start-column="35" selection-end-line="44" selection-end-column="35" />
+        <state relative-caret-position="255">
+          <caret line="15" lean-forward="true" selection-start-line="15" selection-end-line="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-server/routes/lista.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="22" selection-start-line="7" selection-start-column="22" selection-end-line="7" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-server/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="221">
+          <caret line="13" column="16" selection-start-line="13" selection-start-column="10" selection-end-line="13" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-server/routes/review.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="22" column="48" selection-start-line="22" selection-start-column="48" selection-end-line="22" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/book-info/book-info.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="146" column="36" lean-forward="true" selection-start-line="146" selection-start-column="36" selection-end-line="146" selection-end-column="36" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="36" selection-start-line="10" selection-start-column="36" selection-end-line="10" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/search-page/search-page.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="2" column="43" selection-start-line="2" selection-start-column="43" selection-end-line="2" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="40" lean-forward="true" selection-start-line="7" selection-start-column="40" selection-end-line="7" selection-end-column="40" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/home-page/home-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="48" selection-start-line="10" selection-start-column="48" selection-end-line="10" selection-end-column="48" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/help-page/help-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="33" lean-forward="true" selection-start-line="8" selection-start-column="33" selection-end-line="8" selection-end-column="33" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="8" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="8" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/header/header.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="12" lean-forward="true" selection-start-line="6" selection-start-column="12" selection-end-line="6" selection-end-column="12" />
+          <folding>
+            <element signature="n#style#0;n#p#2;n#div#1;n#body#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/header/header.component.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-731">
+          <caret line="20" column="10" selection-start-line="20" selection-start-column="10" selection-end-line="20" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="9" column="39" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="39" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/user-info/user-info.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="629">
+          <caret line="40" column="3" selection-start-line="40" selection-start-column="3" selection-end-line="40" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/header/header.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="272">
+          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+          <folding>
+            <element signature="e#0#50#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="170">
+          <caret line="10" column="68" lean-forward="true" selection-start-line="10" selection-start-column="68" selection-end-line="10" selection-end-column="68" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/b-plus-client/src/app/login-page/login-page.component.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="155">
+          <caret line="31" column="28" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
         </state>
       </provider>
     </entry>

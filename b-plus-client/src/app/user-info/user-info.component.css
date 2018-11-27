@@ -1,0 +1,13 @@
+.button_logout{
+  font-family: 'Open Sans', SansSerif;
+  font-size: 1em;
+  background-color: #1C155B;
+  color: white;
+  border-style: none;
+  margin-top: 2%;
+}
+
+.text_loan{
+  font-family: 'Open Sans', SansSerif;
+  font-size: 1em;
+}

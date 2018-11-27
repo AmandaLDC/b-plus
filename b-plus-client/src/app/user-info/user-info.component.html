@@ -5,14 +5,14 @@
   <div class="container global-div">
     <div class="row">
       <div class="col-md-12">
-        Foto do Usuário
+        Foto do Usuário<br>
 
-        Nome: {{user?.sobrenome_aluno}}
-        RA: {{user?.id_aluno}}
-        Curso: {{user?.nome_curso}}
-        Semestre: {{user?.semestre}}
-        Situação: {{results?.situacao_leitor}}
-        E-mail: {{user?.email}}
+        Nome: {{user?.sobrenome_aluno}}<br>
+        RA: {{user?.id_aluno}}<br>
+        Curso: {{user?.nome_curso}}<br>
+        Semestre: {{user?.semestre}}<br>
+        Situação: {{results?.situacao_leitor}}<br>
+        E-mail: {{user?.email}}<br>
 
         Lista de Notificação:
         <!-- Inserir quadro aqui-->
@@ -24,21 +24,26 @@
               <!-- Inserir divisória aqui-->
             </li>
         </ul>
-
-        Histórico de Empréstimos:
-        <!-- Inserir quadro aqui-->
-        Icone de Expandir
-        <!-- Inserir botão e icone aqui-->
-        <!-- INSERIR TABELA AQUI -->
-        <ul>
-          Livro / Situação / Data De Empréstimos / Data De Devolução
-            <li *ngFor="let results of results">
-              {{results?.id_exemplar}} / {{results?.ativo}} / {{results?.dt_emprestimo}} / {{results?.dt_devolucao}}
-              <!-- Inserir divisória aqui-->
-            </li>
-        </ul>
-
-        <button (click)="logOut()">Log Out</button>
+        <div class="col-md-12">
+          <div id="accordion" class="accordion">
+            <div class="card mb-0">
+              <div class="card-header collapsed" data-toggle="collapse" href="#collapseOne">
+                <a class="card-title">
+                  Histórico de Empréstimos: <i class="fas fa-angle-down fa-2x"></i>
+                </a>
+              </div>
+              <div id="collapseOne" class="card-body collapse" data-parent="#accordion">
+                <ul>
+                  Livro / Situação / Data De Empréstimos / Data De Devolução
+                  <li *ngFor="let results of results">
+                    {{results?.id_exemplar}} / {{results?.ativo}} / {{results?.dt_emprestimo}} / {{results?.dt_devolucao}}
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        <button class="button_logout" (click)="logOut()">Log Out</button>
       </div>
     </div>
   </div>

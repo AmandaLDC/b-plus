@@ -1,16 +1,16 @@
-var express = require('express');
-var router = express.Router();
-var pg = require('pg');
+const express = require('express');
+const router = express.Router();
+const pg = require('pg');
 
 var config = {
 	user: "postgres",
 	database: "tic",
-	password:"Khaleesi2603",
+	password:"facefbd",
 	port: 5432,
 	max: 10,
 	idleTimeoutMills: 30000,
 }
-var canal = new pg.Pool(config);
+const canal = new pg.Pool(config);
 
 //CONSULTAR COMENTARIOS
 
@@ -20,7 +20,7 @@ router.get('livro/', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'select * from tb_comentario_livro order by data_criacao';
+        const sql = 'select * from tb_comentario order by data_criacao';
         conexao.query(sql, function(erro, resultado){
         feito();
         if (erro){
@@ -37,7 +37,7 @@ router.get('lista/', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'select * from tb_comentario_lista order by data_criacao';
+        const sql = 'select * from tb_comentario order by data_criacao';
         conexao.query(sql, function(erro, resultado){
         feito();
         if (erro){
@@ -54,7 +54,7 @@ router.get('/lista/:id', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'select * from tb_comentario_lista where id_lista = ' + req.params.id;
+        const sql = 'select * from tb_comentario where id_lista = ' + req.params.id;
         console.log(sql);
       conexao.query(sql, function(erro, resultado){
         feito();
@@ -72,7 +72,7 @@ router.get('/livro/:id', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'select * from tb_comentario_livro where id_livro = ' + req.params.id;
+        const sql = 'select * from tb_comentario where id_livro = ' + req.params.id;
         console.log(sql);
       conexao.query(sql, function(erro, resultado){
         feito();
@@ -90,7 +90,7 @@ router.get('livro/usuario/:id', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'select * from tb_comentario_livro where id_usuario = ' + req.params.id;
+        const sql = 'select * from tb_comentario where id_usuario = ' + req.params.id;
         console.log(sql);
       conexao.query(sql, function(erro, resultado){
         feito();
@@ -108,7 +108,7 @@ router.get('lista/usuario/:id', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'select * from tb_comentario_lista where id_usuario = ' + req.params.id;
+        const sql = 'select * from tb_comentario where id_usuario = ' + req.params.id;
         console.log(sql);
       conexao.query(sql, function(erro, resultado){
         feito();
@@ -129,7 +129,7 @@ router.post('/livro/', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'insert into tb_comentario_livro (conteudo_comentario, avaliaco_comentario, id_usuario, id_livro, data_criacao) values (\'' + req.body.conteudo_comentario + '\', \'' + req.body.avaliaco_comentario + '\', \'' + req.body.id_usuario + '\', \'' + req.body.id_livro + '\', \'' + req.body.data_criacao + '\')';
+        const sql = 'insert into tb_comentario (conteudo_comentario, avaliaco_comentario, id_usuario, id_livro, data_criacao) values (\'' + req.body.conteudo_comentario + '\', \'' + req.body.avaliaco_comentario + '\', \'' + req.body.id_usuario + '\', \'' + req.body.id_livro + '\', \'' + req.body.data_criacao + '\')';
         console.log(sql);
 
       conexao.query(sql, function(erro, resultado){
@@ -149,7 +149,7 @@ router.post('/lista/', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'insert into tb_comentario_lista (conteudo_comentario, avaliaco_comentario, id_usuario, id_lista, data_criacao) values (\'' + req.body.conteudo_comentario + '\', \'' + req.body.avaliaco_comentario + '\',\'' + req.body.id_usuario + '\', \'' + req.body.id_lista + '\',\'' + req.body.data_criacao + '\')';
+        const sql = 'insert into tb_comentario (conteudo_comentario, avaliaco_comentario, id_usuario, id_lista, data_criacao) values (\'' + req.body.conteudo_comentario + '\', \'' + req.body.avaliaco_comentario + '\',\'' + req.body.id_usuario + '\', \'' + req.body.id_lista + '\',\'' + req.body.data_criacao + '\')';
         console.log(sql);
 
       conexao.query(sql, function(erro, resultado){
@@ -170,7 +170,7 @@ router.put('/lista/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-        const sql = "update tb_comentario_lista set conteudo_comentario = '" + req.body.conteudo_comentario +
+        const sql = "update tb_comentario set conteudo_comentario = '" + req.body.conteudo_comentario +
             "', avaliaco_comentario = '" + req.body.avaliaco_comentario +
             "' where id_lista =  " + req.params.id;
         console.log(sql);
@@ -190,7 +190,7 @@ router.put('/livro/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-        const sql = "update tb_comentario_livro set conteudo_comentario = '" + req.body.conteudo_comentario +
+        const sql = "update tb_comentario set conteudo_comentario = '" + req.body.conteudo_comentario +
             "', avaliaco_comentario = '" + req.body.avaliaco_comentario +
             "' where id_livro =  " + req.params.id;
         console.log(sql);
@@ -212,7 +212,7 @@ router.delete('/lista/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-        const sql = 'delete from tb_comentario_lista where id_comentario =  ' + req.params.id;
+        const sql = 'delete from tb_comentario where id_comentario =  ' + req.params.id;
         console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();
@@ -230,7 +230,7 @@ router.delete('/livro/:id', function (req, res, next) {
 		if (erro){
 			return console.error('erro ao conectar no banco', erro);
 		}
-        const sql = 'delete from tb_comentario_livro where id_comentario =  ' + req.params.id;
+        const sql = 'delete from tb_comentario where id_comentario =  ' + req.params.id;
         console.log(sql);
 		conexao.query(sql, function(erro, resultado){
 			feito();

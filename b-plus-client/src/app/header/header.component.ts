@@ -11,10 +11,10 @@ import 'rxjs/add/operator/distinctUntilChanged';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-
   results: any = [];
   suggestions: any = [];
   queryField: FormControl = new FormControl();
+  user: any = JSON.parse(localStorage.getItem('user'));
 
   constructor(public router: Router, private _searchService: SearchService) { }
 

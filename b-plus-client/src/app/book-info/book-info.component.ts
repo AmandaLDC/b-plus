@@ -44,8 +44,7 @@ export class BookInfoComponent implements OnInit {
     private router: Router) { }
 
   ngOnInit() {
-    let livro_endpoint = this._searchService.getdataforid_material();
-
+    const livro_endpoint = this._searchService.getdataforid_material();
     if (livro_endpoint !== '0') {
       this.http.get(livro_endpoint, this.options).subscribe(data => {
         this.pageInit(data);
@@ -147,7 +146,7 @@ export class BookInfoComponent implements OnInit {
       avaliaco_comentario: this.model.nota,
       id_livro: data[0].id_exemplar,
       data_criacao: dn,
-    }
+    };
     const endpoint = this._apiService.postReviewBook();
     this.http.post(endpoint, this.review, this.options)
       .subscribe(resposta => {
@@ -155,11 +154,11 @@ export class BookInfoComponent implements OnInit {
         this.ngOnInit();
       }, (erro) => {
         console.log(erro);
-      })
+      });
     });
   }
 
-  getComments(data){
+  getComments(data) {
     const endpoint = this._apiService.reviewBook(data[0].id_exemplar);
     this.http.get(endpoint, this.options)
       .subscribe(resposta => {
@@ -167,9 +166,9 @@ export class BookInfoComponent implements OnInit {
         console.log(resposta);
       }, (erro) => {
         console.log(erro);
-      })
+      });
   }
-  removeComments(i){
+  removeComments(i) {
     const endpoint = this._apiService.reviewBook(this.comment[i].id_comentario);
     this.http.delete(endpoint, this.options)
       .subscribe(resposta => {
@@ -177,6 +176,6 @@ export class BookInfoComponent implements OnInit {
         this.ngOnInit();
       }, (erro) => {
         console.log(erro);
-      })
+      });
   }
 }

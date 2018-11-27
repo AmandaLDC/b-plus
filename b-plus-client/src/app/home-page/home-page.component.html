@@ -4,17 +4,19 @@
   </p>
   <div class="container global-div" *ngFor="let lista of lista; let i = index">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-9 name_list">
         {{this.lista.nome_lista}}
-        <button type="button" (click)=expandList(i)><i class="fas fa-angle-down fa-3x"></i></button>
-        <button type="button" (click)="editList(i)"><i class="fas fa-pencil-alt fa-3x"></i></button>
-        <button type="button" (click)="removeList(i)"><i class="fas fa-trash-alt fa-3x"></i></button>
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="button_list" (click)=expandList(i)><i class="fas fa-angle-down fa-3x"></i></button>
+        <button type="button" class="button_list" (click)="editList(i)"><i class="fas fa-pencil-alt fa-3x"></i></button>
+        <button type="button" class="button_list" (click)="removeList(i)"><i class="fas fa-trash-alt fa-3x"></i></button>
       </div>
     </div>
   </div>
-  <div class="container global-div">
+  <div class="container">
     <div class="row">
-      <div class="col-md-2 col-md-offset-10">
+      <div class="col-md-2">
         <button type="button" class="button_home-page" (click)="createList()"> Nova Lista <i class="fas fa-plus"></i></button>
       </div>
     </div>

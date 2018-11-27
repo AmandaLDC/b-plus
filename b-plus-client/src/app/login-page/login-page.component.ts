@@ -30,7 +30,6 @@ export class LoginPageComponent implements OnInit {
       const id = this.model.id;
       const endpoint = this._apiService.getLogin(id);
       console.log(endpoint);
-
       const options = {
         Headers: new HttpHeaders({
           'Content-Type': 'application/json',

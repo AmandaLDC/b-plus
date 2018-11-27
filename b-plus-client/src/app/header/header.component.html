@@ -1,27 +1,16 @@
-<head>
-  <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
-  <script src="https://cdn.rawgit.com/download/glyphicons/0.1.0/glyphicons.js"></script>
-</head>
 <body>
 <!-- Landing and Login Page -->
   <div class="guest-bar-container" *ngIf="router.url === '/landing-page' || router.url === '/login-page'">
   </div>
   <!-- Header and Search Bar -->
   <div *ngIf="!(router.url === '/landing-page' || router.url === '/login-page')" class="user-bar-container">
-    <input  class="search-bar-container" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
-    <a class="search-button" [routerLink]="['/search-page']">
-      Procurar
+      <input class="search-bar-container" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus />
+      <a class="search-button" [routerLink]="['/search-page']">
+        Procurar
+      </a>
+    <a class="user-name" [routerLink]="['/user-info']">
+      <i class="far fa-user-circle fa-2x user_icon"></i>{{user?.sobrenome_aluno}}
     </a>
-    <a [routerLink]="['/user-info']">
-      Usuário
-    </a>
-    <p class="notification"><span class="glyphicon">&#xe123;</span><p>
-
-
-      <!-- AS SUGESTÕES NÃO DESAPARECEM SE VC APAGA -->
-      <!-- OS TITULOS SE REPETEM (O ID_MATERIAL NÃO PODE SER IGUAL) -->
-      <!-- ARRUMAR O CSS DAS SUGESTÕES -->
-
     <ul>
         <li *ngFor="let results of results ? results.slice(0,6): []" class="search-bar-suggestion-containr">
           <div *ngIf="results.numero_exemplar == 1">

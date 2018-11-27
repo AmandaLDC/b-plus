@@ -5,7 +5,7 @@ const pg = require('pg');
 const config = {
     user: "postgres",
     database: "tic",
-    password: "Khaleesi2603",
+    password: "facefbd",
     port: 5432,
     max: 10,
     idleTimeoutMills: 30000,

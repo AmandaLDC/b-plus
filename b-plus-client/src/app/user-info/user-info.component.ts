@@ -36,8 +36,7 @@ export class UserInfoComponent implements OnInit {
   }
 
   logOut() {
-    localStorage.clear();
     this.router.navigate(['/login-page']);
+    localStorage.clear();
   }
-
 }
