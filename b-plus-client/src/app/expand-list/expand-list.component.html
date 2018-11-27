@@ -4,7 +4,7 @@
   </p>
   <div class="container global-div">
     <div class="row">
-      <div class="col-md-12">
+      <div class="col-md-10">
         Nome: {{this.lista.nome_lista}}<br>
         Categoria: {{this.lista.categoria_lista}}<br>
         Tipo de Lista:
@@ -15,25 +15,20 @@
         <p *ngFor="let results of results; let i = index">
           {{this.results.id_livro}}
         </p>
-        Comentários
-        <!-- Inserir divisória aqui -->
-        Foto do Usuário
-        Nome do Usuário
-        Nota
-        Data
-        <!-- Inserir divisória aqui -->
-        Conteúdo
-        <div *ngIf="this.user?.id_aluno == this.lista.id_usuario">
-          <button type="button" (click)="updateList()">Editar</button>
-          <button type="button" (click)="removeList()">Excluir</button>
-        </div>
+      </div>
 
+      <div class="col-md-2" *ngIf="this.user?.id_aluno == this.lista.id_usuario">
+        <button type="button" class="button-edit-list" (click)="updateList()">Editar</button>
+        <button type="button" class="button-remove-list"(click)="removeList()">Excluir</button>
+      </div>
+    </div>
+        <hr>
         <form class="form-signin" (ngSubmit)="onSubmit()">
           <div class="form-label-group">
-            <label class="label-login">Comentário</label>
+            <label class="label-comment">Comentário</label>
 
             <div class="form-label-group">
-              <label class="label-login">Nota</label>
+              <label class="label-login">Nota</label><br>
               <label class="customradio"><span class="radiotextsty">1</span>
                 <input type="radio" name="nota" [(ngModel)]="model.nota" #nota="ngModel" value=1>
                 <span class="checkmark"></span>
@@ -58,29 +53,19 @@
 
             <textarea type="text" class="form-control" name="id" [(ngModel)]="model.comentario"  #comentario="ngModel"placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
           </div>
-          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Avaliar/Comentar</button>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase button-submit-coment" type="submit">Avaliar/Comentar</button>
         </form>
-
-
-        <div class="container global-div" *ngFor="let comment of comment; let i = index">
-          <div class="row">
-            <div class="col-md-12">
-              {{this.comment.id_usuario}}
-              <p>Nota:</p>
-              <p>{{this.comment.avaliaco_comentario}}</p>
-              Data:
-              {{this.comment.data_criacao}}
-              <p>Comentário:</p>
-              <p>{{this.comment.conteudo_comentario}}</p>
-              <div *ngIf="this.user?.id_aluno == this.comment.id_usuario">
-                <button (click)="removeComments(i)">Excluir</button>
-              </div>
+        <div class="col-md-12" *ngFor="let comment of comment; let i = index">
+            {{this.comment.id_usuario}}
+            <p>Nota:</p>
+            <p>{{this.comment.avaliaco_comentario}}</p>
+            Data:
+            {{this.comment.data_criacao}}
+            <p>Comentário:</p>
+            <p>{{this.comment.conteudo_comentario}}</p>
+            <div *ngIf="this.user?.id_aluno == this.comment.id_usuario">
+              <button (click)="removeComments(i)">Excluir</button>
             </div>
-          </div>
-        </div>
-
-
-      </div>
+         </div>
     </div>
-  </div>
 </body>

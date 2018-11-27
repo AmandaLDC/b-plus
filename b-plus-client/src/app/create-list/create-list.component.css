@@ -1,0 +1,26 @@
+.form-label-group{
+  padding-top: 1%;
+}
+.customradio{
+  padding: 1% 1% 1% 1%;
+}
+.radio-options{
+}
+
+.button-list{
+  background-color: #1C155B;
+  color: white;
+  border-style: none;
+}
+
+.label-comment{
+  margin-bottom: 2%;
+  margin-top: 2%;
+}
+
+.checkmark{
+  padding: 1%;
+}
+.label-login{
+  margin-top: 1%;
+}

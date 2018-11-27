@@ -12,15 +12,17 @@
           </div>
 
           <div class="form-label-group">
-            <label class="label-login">Tipo de Lista</label>
+            <label class="label-login">Tipo de Lista</label><br>
             <label class="customradio"><span class="radiotextsty">Pública</span>
-              <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="PUB">
+              <input type="radio" name="situacao" class="radio-options" [(ngModel)]="model.situacao" #situacao="ngModel" value="PUB">
               <span class="checkmark"></span>
             </label>
+
             <label class="customradio"><span class="radiotextsty">Pessoal</span>
               <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="PES">
               <span class="checkmark"></span>
             </label>
+
             <label class="customradio"><span class="radiotextsty">Oficial</span>
               <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="OFI">
               <span class="checkmark"></span>
@@ -29,7 +31,7 @@
 
           <div class="form-label-group">
             <label class="label-login">Cursos</label>
-            <input list="cursos" name="curso" name="categoria" [(ngModel)]="model.categoria" #situacao="ngModel">
+            <input list="cursos" class="form-control" name="curso" name="categoria" [(ngModel)]="model.categoria" #situacao="ngModel">
             <datalist id="cursos">
               <option value="Administração">
               <option value="Ciência da Computação">
@@ -47,10 +49,9 @@
               <option value="Sistemas de Informação">
             </datalist>
           </div>
-
-          Livros: Você irá poder inserir livros editando a lista na home page!
-
-          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Salvar</button>
+          <br>
+          Livros: Você irá poder inserir livros editando a lista na home page!<br>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase button-list" type="submit">Salvar</button>
         </form>
       </div>
     </div>

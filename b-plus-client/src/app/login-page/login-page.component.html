@@ -11,13 +11,13 @@
                   <label class="label-login" for="id">Codigo</label>
                   <input type="text" class="form-control" name="id" [(ngModel)]="model.id" #id="ngModel" placeholder="Código" required autofocus>
                 </div>
-
                 <div class="form-label-group">
                   <label class="label-login" for="password">Senha</label>
                   <input type="password" class="form-control" name="password" [(ngModel)]="model.password" #password="ngModel" placeholder="Senha" required>
                 </div>
-                <!-- Mudar cor do botão  -->
-                <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Entrar</button>
+                <div class="form-button">
+                  <button class="btn btn-lg btn-primary text-uppercase btn-login" type="submit">Entrar</button>
+                </div>
               </form>
             </div>
           </div>

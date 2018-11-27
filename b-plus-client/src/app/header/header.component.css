@@ -18,6 +18,7 @@
 .search-bar-container{
   background: transparent;
   border-style: none;
+  margin-left: 1%;
   width: 50%;
   height: 60px;
   top: 0;
@@ -28,9 +29,8 @@ input:focus{
 }
 
 input::placeholder{
-  padding-left: 10px;
+  padding-left: 5px;
 }
-
 
 .search-button{
   font-family: 'Open Sans', SansSerif;
@@ -60,7 +60,7 @@ input::placeholder{
   border: 1px grey solid;
   width: 60%;
   height: 30px;
-  left:250px;
+  left: 250px;
   top: 60px;
 }
 
@@ -96,7 +96,7 @@ input::placeholder{
 }
 
 .navbar-header{
-  background-color: #36354b;
+  background-color: #1C155B;
   padding-bottom: 20px;
 }
 

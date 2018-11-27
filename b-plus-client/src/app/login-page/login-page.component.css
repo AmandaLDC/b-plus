@@ -11,8 +11,26 @@
 
 .form-label-group{
   padding-top: 2%;
+  padding-left: 20%;
+  padding-right: 20%;
 }
 
 .label-login{
   color: white;
 }
+
+.btn-login{
+  margin-top: 5%;
+  text-align: center;
+  background-color: white;
+  color: #1C155B;
+}
+
+.form-button{
+  padding-left: 45%;
+}
+
+.login-brand{
+  padding-left: 35%;
+}
+

@@ -23,13 +23,9 @@
           <p>Número de Exemplares na Bibioteca: {{results.n_total}} unidades.</p>
           <p>Disponibilidade Atual: {{results.n_disponivel}} exemplar disponível.</p>
 
-          Avise-me quando estiver disponível:
-          <!-- Inserir botão aqui -->
-
           <div class="related">
-          <p>Outros Livros Desse Autor:</p>
+            <p>Outros Livros Desse Autor:</p>
           </div>
-
 
           <form class="form-signin" (ngSubmit)="onSubmit()">
             <div class="form-label-group">
@@ -59,29 +55,23 @@
                 </label>
               </div>
 
-              <textarea type="text" class="form-control" name="id" [(ngModel)]="model.comentario"  #comentario="ngModel"placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
+              <textarea type="text" class="form-control comments" name="id" [(ngModel)]="model.comentario"  #comentario="ngModel"placeholder="Deixe seu comentário aqui..." required autofocus rows="5"></textarea>
             </div>
-            <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Avaliar/Comentar</button>
+            <button class="btn btn-lg btn-primary btn-block text-uppercase button-submit-coment" type="submit">Avaliar/Comentar</button>
           </form>
         </div>
-
-        <div class="container global-div" *ngFor="let comment of comment; let i = index">
-          <div class="row">
-            <div class="col-md-12">
-              {{this.comment.id_usuario}}
-              <p>Nota:</p>
-              <p>{{this.comment.avaliaco_comentario}}</p>
-              Data:
-              {{this.comment.data_criacao}}
-              <p>Comentário:</p>
-              <p>{{this.comment.conteudo_comentario}}</p>
-              <div *ngIf="this.user?.id_aluno == this.comment.id_usuario">
-                <button (click)="removeComments(i)">Excluir</button>
-              </div>
-            </div>
+        <div class="col-md-12" *ngFor="let comment of comment; let i = index">
+          <h1>{{this.comment.id_usuario}}</h1>
+          <p>Nota:</p>
+          <p>{{this.comment.avaliaco_comentario}}</p>
+          <p>Data:</p>
+          {{this.comment.data_criacao}}
+          <p>Comentário:</p>
+          <p>{{this.comment.conteudo_comentario}}</p>
+          <div *ngIf="this.user?.id_aluno == this.comment.id_usuario">
+            <button (click)="removeComments(i)">Excluir</button>
           </div>
         </div>
-
       </div>
     </div>
   </div>

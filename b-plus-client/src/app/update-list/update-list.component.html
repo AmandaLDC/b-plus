@@ -12,7 +12,7 @@
           </div>
 
           <div class="form-label-group">
-            <label class="label-login">Tipo de Lista</label>
+            <label class="label-login">Tipo de Lista</label><br>
             <label class="customradio"><span class="radiotextsty">Pública</span>
               <input type="radio" name="situacao" [(ngModel)]="model.situacao" #situacao="ngModel" value="PUB">
               <span class="checkmark"></span>
@@ -29,7 +29,7 @@
 
           <div class="form-label-group">
             <label class="label-login">Cursos</label>
-            <input list="cursos" name="curso" name="categoria" [(ngModel)]="model.categoria" #situacao="ngModel">
+            <input list="cursos" name="curso" name="categoria" class="form-control cursos" [(ngModel)]="model.categoria" #situacao="ngModel">
             <datalist id="cursos">
               <option value="Administração">
               <option value="Ciência da Computação">
@@ -48,10 +48,11 @@
             </datalist>
           </div>
 
-          <button class="btn btn-lg btn-primary btn-block text-uppercase" type="submit">Salvar</button>
+          <button class="btn btn-lg btn-primary btn-block text-uppercase button-update-list" type="submit">Salvar</button>
         </form>
-        Insira Livros:
-        <input class="search-bar-container" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
+
+        <label class="label-login">Insira Livros</label>
+        <input class="search-bar-container" class="form-control" [formControl]="queryField" type="text" id="keyword" placeholder="Procure livros..." autofocus/>
         <ul>
             <li *ngFor="let results of results ? results.slice(0,60): []; let i = index">
               <div *ngIf="results.numero_exemplar == 1">
@@ -64,7 +65,7 @@
             </li>
         </ul>
 
-        Remova Livros:
+        <label class="label-login">Remover</label>
         <ul>
             <li *ngFor="let removiveis of removiveis ? removiveis.slice(0,60): []; let i = index">
                 <button (click)="onClickRemove(i)">

@@ -5,3 +5,14 @@
 .related{
   padding-top: 5%;
 }
+
+.button-submit-coment{
+  background-color: #1C155B;
+  color: white;
+  border-style: none;
+}
+
+.comments{
+  margin-top: 2%;
+  margin-bottom: 2%;
+}

@@ -1,0 +1,22 @@
+.button-edit-list{
+  background-color: #1C155B;
+  color: white;
+  margin-right: 5%;
+  border-style: none;
+}
+
+.button-remove-list{
+  background-color: red;
+  color: white;
+  border-style: none;
+}
+
+.button-submit-coment{
+  background-color: #1C155B;
+  color: white;
+  border-style: none;
+  margin-top: 2%;
+}
+.customradio{
+  margin: 1%;
+}
