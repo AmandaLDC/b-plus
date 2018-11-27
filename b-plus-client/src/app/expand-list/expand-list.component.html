@@ -10,7 +10,12 @@
         Tipo de Lista:
         {{this.lista.situacao_lista}}<br>
         Criado Por:
-        {{this.user.sobrenome_aluno}}<br>
+        <div *ngIf="this.user?.id_aluno == this.lista.id_usuario">
+          {{this.user.sobrenome_aluno}}
+        </div>
+        <div *ngIf="this.user?.id_aluno != this.lista.id_usuario">
+          {{this.lista.id_usuario}}
+        </div>
         Livros:
         <p *ngFor="let results of results; let i = index">
           {{this.results.id_livro}}
