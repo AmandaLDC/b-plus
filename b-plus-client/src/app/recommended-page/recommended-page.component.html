@@ -1,19 +1,15 @@
 <body class="main">
   <p class="main-title">
-    Bibliografia Recomendada Por Professores
+    Bibliografias Compartilhadas
   </p>
-    <div class="container global-div">
-      <div class="row">
-        <div class="col-md-12">
-          Engenharia de Software 1° Semestre
-          <ul>
-            <li>
-              <!-- Inserir divisória aqui -->
-              Matéria
-              X Listas
-            </li>
-          </ul>
-        </div>
+  <div class="container global-div" *ngFor="let lista of lista; let i = index">
+    <div class="row">
+      <div class="col-md-9 name_list">
+        {{this.lista.nome_lista}}
+      </div>
+      <div class="col-md-3">
+        <button type="button" class="button_list" (click)=expandList(i)><i class="fas fa-angle-down fa-3x"></i></button>
       </div>
     </div>
-  </body>
+  </div>
+</body>

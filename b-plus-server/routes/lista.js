@@ -20,7 +20,7 @@ router.get('/', function (req, res, next) {
       if (erro){
         return console.error('erro ao conectar no banco', erro);
       }
-        const sql = 'select * from tb_listas order by id_lista';
+        const sql = 'select * from tb_listas where situacao_lista = ' + '\'PUB\'';
         conexao.query(sql, function(erro, resultado){
         feito();
         if (erro){

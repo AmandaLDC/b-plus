@@ -126,6 +126,11 @@ constructor(){ }
     return url;
   }
 
+  allLists() {
+    let url = 'http://localhost:3000/lista/';
+    return url;
+  }
+
   listId() {
     let url = 'http://localhost:3000/lista/' + this.list.id_lista;
     return url;
